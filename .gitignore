@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Build & Dist
+dist/
+build/
+*.spec
+*.exe
+Release/
+installer_assets/
+
+# Temporary & Test files
+reports/Test_*.pdf
+reports/test_*.pdf
+reports/Gurukulam_Kundli_*.pdf
+reports/*_pages/
+*.tmp
+test_*.py
+test_*.json
+served_*.js
+patch_*.py
+apply_*.py
+add_*.py
+debug_*.py
+fix_*.py
+upgrade_*.py
+verify_*.py
+get_api_data.py
+check_served_html.py
+enrich_workspace_modules.py
+.system_generated/
+*.tmp
+
+reports/Vedas_Kundli_Groom_*.pdf
+reports/Vedas_Kundli_Predictions_*.pdf
+test_*.pdf
