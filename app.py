@@ -2115,9 +2115,9 @@ def index_ui():
 
           <!-- Regional Chart Style -->
           <div class="control-pill" title="Chart Style">
-            <button class="control-btn active" id="style_north" onclick="setChartStyle('north')">North (उत्तर)</button>
-            <button class="control-btn" id="style_south" onclick="setChartStyle('south')">South (दक्षिण)</button>
-            <button class="control-btn" id="style_east" onclick="setChartStyle('east')">East (पूर्व)</button>
+            <button class="control-btn active" id="style_north" onclick="setChartStyle('north')">ઉત્તર (North / उत्तर)</button>
+            <button class="control-btn" id="style_south" onclick="setChartStyle('south')">દક્ષિણ (South / दक्षिण)</button>
+            <button class="control-btn" id="style_east" onclick="setChartStyle('east')">પૂર્વ (East / पूर्व)</button>
           </div>
 
           <!-- Language Selector -->
@@ -2511,7 +2511,7 @@ def index_ui():
             <button type="button" class="btn-time-step" style="padding:4px 10px; font-size:11.5px; font-weight:700;" onclick="document.getElementById('sec_shadbala_sav').scrollIntoView({behavior:'smooth'})">⚖️ Shadbala &amp; SAV</button>
             <button type="button" class="btn-time-step" style="padding:4px 10px; font-size:11.5px; background:#FEF3C7; color:#78350F; font-weight:800; border-color:#FDE68A;" onclick="document.getElementById('sec_kp_system').scrollIntoView({behavior:'smooth'})">🏛️ KP System &amp; Cusps</button>
             <button type="button" class="btn-time-step" style="padding:4px 10px; font-size:11.5px; background:#FEE2E2; color:#991B1B; font-weight:800; border-color:#FCA5A5;" onclick="document.getElementById('sec_lal_kitab').scrollIntoView({behavior:'smooth'})">📖 Lal Kitab &amp; Upay</button>
-            <button type="button" class="btn-time-step" style="padding:4px 10px; font-size:11.5px; background:#DCFCE7; color:#166534; font-weight:800; border-color:#86EFAC;" onclick="document.getElementById('sec_ratna_yantra').scrollIntoView({behavior:'smooth'})">💎 Ratna &amp; Siddha Yantra</button>
+            <button type="button" class="btn-time-step" style="padding:4px 10px; font-size:11.5px; background:#DCFCE7; color:#166534; font-weight:800; border-color:#86EFAC;" onclick="document.getElementById('sec_ratna_yantra').scrollIntoView({behavior:'smooth'})">💎 રત્ન અને સિદ્ધ યંત્ર (रत्न व यंत्र)</button>
             <button type="button" class="btn-time-step" style="padding:4px 10px; font-size:11.5px; background:#E0E7FF; color:#3730A3; font-weight:800; border-color:#C7D2FE;" onclick="document.getElementById('sec_avkahada_science').scrollIntoView({behavior:'smooth'})">🔬 Avakahada &amp; Science</button>
           </div>
 
@@ -2563,7 +2563,7 @@ def index_ui():
           <!-- Planetary Positions & Dignities -->
           <div class="glass-card">
             <div class="card-header">
-              <span>Planetary Coordinates, Nakshatras &amp; Dignities (ग्रह स्पष्ट मान व अवस्था)</span>
+              <span>ગ્રહ સ્પષ્ટ માન, નક્ષત્ર અને અવસ્થા (ग्रह स्पष्ट मान व अवस्था)</span>
             </div>
             <div style="overflow-x:auto;">
               <table class="dash-table">
@@ -2582,7 +2582,7 @@ def index_ui():
           <!-- 12 Bhavas (Houses) -->
           <div class="glass-card">
             <div class="card-header">
-              <span>🪐 12 Bhava Analysis &amp; Sign Lords (द्वादश भाव विश्लेषण)</span>
+              <span>🪐 ૧૨ ભાવ વિશ્લેષણ અને ભાવેશ (द्वादश भाव विश्लेषण)</span>
             </div>
             <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:10px;" id="bhavasGrid"></div>
           </div>
@@ -2590,7 +2590,7 @@ def index_ui():
           <!-- Vimshottari Dasha Timeline -->
           <div class="glass-card">
             <div class="card-header">
-              <span>🔮 Vimshottari Dasha Periods &amp; Apahara Balance</span>
+              <span>🔮 વિંશોત્તરી મહાદશા અને અંતર્દશા સમયગાળો (विंशोत्तरी महादशा व अंतर्दशा)</span>
             </div>
             <div id="dashaSummary"></div>
             <div style="margin-top:16px;">
@@ -2602,7 +2602,7 @@ def index_ui():
           <!-- Doshas & Shastriya Remedies -->
           <div class="glass-card">
             <div class="card-header">
-              <span>🛡️ Shastriya Doshas &amp; Authentic Remedies (दोष एवं वैदिक उपाय)</span>
+              <span>🛡️ શાસ્ત્રીય દોષ અને પ્રામાણિક વૈદિક ઉપાય (दोष एवं वैदिक उपाय)</span>
             </div>
             <div class="doshas-grid" id="doshasList"></div>
           </div>
@@ -2610,7 +2610,7 @@ def index_ui():
           <!-- Auspicious Yogas -->
           <div class="glass-card">
             <div class="card-header">
-              <span>🌟 Classical Planetary Yogas (शुभ योग फल)</span>
+              <span>🌟 પ્રાચીન શાસ્ત્રીય ગ્રહ યોગ અને શુભ ફળ (शुभ योग फल)</span>
             </div>
             <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:10px;" id="yogasList"></div>
           </div>
@@ -2618,7 +2618,7 @@ def index_ui():
           <!-- Shadbala & Ashtakavarga Matrix -->
           <div class="glass-card" id="sec_shadbala_sav">
             <div class="card-header">
-              <span>⚖️ Shadbala (6-Fold Planetary Strengths) &amp; Bhavabala</span>
+              <span>⚖️ ષડ્બળ ૬-સ્તરીય ગ્રહ સામર્થ્ય અને ભાવબળ (षड्बल व भावबल)</span>
             </div>
             <div style="overflow-x:auto; margin-bottom:14px;">
               <table class="crm-table" id="tableShadbala" style="text-align:center;">
@@ -2635,7 +2635,7 @@ def index_ui():
 
             <!-- SAV Grid -->
             <div class="card-header">
-              <span>Sarvashtakavarga Matrix (सर्वाष्टकवर्ग - 337 Auspicious Points)</span>
+              <span>સર્વાષ્ટકવર્ગ ચક્ર (सर्वाष्टकवर्ग - ३૩૭ શુભ બિંદુ)</span>
             </div>
             <div style="overflow-x:auto;">
               <table class="crm-table" style="text-align:center;">
@@ -2667,7 +2667,7 @@ def index_ui():
           <!-- ========================================================= -->
           <div class="glass-card" id="sec_kp_system">
             <div class="card-header">
-              <span>🏛️ Krishnamurti Paddhati (KP System) &amp; 12 Cuspal Sub-Lords (कृष्णमूर्ति पद्धति)</span>
+              <span>🏛️ કૃષ્ણમૂર્તિ પદ્ધતિ અને ૧૨ ભાવ સબ-લોર્ડ્સ (कृष्णमूर्ति पद्धति)</span>
               <span class="badge">KP Horary &amp; Cuspal Precision</span>
             </div>
             
@@ -2717,7 +2717,7 @@ def index_ui():
           <!-- ========================================================= -->
           <div class="glass-card" id="sec_lal_kitab">
             <div class="card-header">
-              <span>📖 Lal Kitab Teva &amp; Ancestral Debts Analysis (लाल किताब ऋण व अचूक उपाय)</span>
+              <span>📖 લાલ કિતાબ તેવા અને પિતૃ ઋણ વિશ્લેષણ (लाल किताब ऋण व अचूक उपाय)</span>
               <span class="badge">Lal Kitab 1952 Remedial Science</span>
             </div>
 
@@ -2743,8 +2743,8 @@ def index_ui():
           <!-- ========================================================= -->
           <div class="glass-card" id="sec_ratna_yantra">
             <div class="card-header">
-              <span>💎 Auspicious Ratna, Siddha Yantra &amp; Divine Remedies (रत्न, सिद्ध यंत्र व मंत्र)</span>
-              <span class="badge">Vedic Gemology &amp; Yantra Vigyan</span>
+              <span>💎 શુભ રત્ન, સિદ્ધ યંત્ર અને દૈવી મંત્ર (रत्न, सिद्ध यंत्र व मंत्र)</span>
+              <span class="badge">વૈદિક રત્ન અને યંત્ર વિજ્ઞાન (रत्न व यंत्र विज्ञान)</span>
             </div>
 
             <!-- Gemstones Grid -->
@@ -2762,8 +2762,8 @@ def index_ui():
           <!-- ========================================================= -->
           <div class="glass-card" id="sec_avkahada_science">
             <div class="card-header">
-              <span>🔬 Avakahada Chakra, Panchang &amp; Planetary Balance Score (अवकहड़ा चक्र व शुभ मुहूर्त विज्ञान)</span>
-              <span class="badge">Cosmic Elements Balance</span>
+              <span>🔬 અવકહડા ચક્ર, પંચાંગ અને ગ્રહ સંતુલન (अवकहड़ा चक्र व शुभ मुहूर्त विज्ञान)</span>
+              <span class="badge">બ્રહ્માંડ તત્વ સંતુલન (तत्व संतुलन)</span>
             </div>
 
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
@@ -3728,55 +3728,38 @@ def index_ui():
       const container = document.getElementById('bhavasGrid');
       container.innerHTML = bhavas.map(b => {
         const houseNum = b.house || b.num || 1;
-        const title = currentLang === 'hi' ? (b.title_hi || b.title_en) : (b.title_en || b.title_hi);
-        const sign = b.sign || b.sign_name || '';
+        const title = toGuWithHi(b.title_hi || b.title_en);
+        const sign = toGuWithHi(b.sign || b.sign_name || '');
         const planets = b.planets || 'Vacant';
-        const summary = currentLang === 'hi' ? (b.summary_hi || b.prediction_hi || '') : (b.summary_en || b.prediction_en || '');
+        const summary = toGu(b.summary_hi || b.prediction_hi || b.summary_en || '');
         return `
         <div style="background:#FFFFFF; border:1.5px solid #EADBC8; border-radius:8px; padding:10px 12px; border-left:4px solid #C2540A;">
           <div style="font-size:12px; font-weight:800; color:#7C2D12;">${houseNum}. ${title}</div>
-          <div style="font-size:11px; color:#854D0E; font-weight:700; margin:3px 0;">Sign: ${sign} • Planets: ${planets}</div>
+          <div style="font-size:11px; color:#854D0E; font-weight:700; margin:3px 0;">રાશિ (Sign): ${sign} • ગ્રહ (Planets): ${toGu(planets)}</div>
           <div style="font-size:11px; color:#2E1C10; line-height:1.45; font-weight:500;">${summary}</div>
         </div>
       `;
       }).join('');
     }
 
-    // Render Dasha & Gemstones
     function renderDashaAndGems(data) {
       const v = data.vimshottari;
       const dashas = v.mahadashas || [];
       document.getElementById('dashaSummary').innerHTML = `
         <div style="margin-bottom:10px; padding:8px 12px; background:#FEF3C7; border:1.5px solid #FDE68A; border-radius:8px; color:#78350F; font-size:12px; font-weight:700;">
-          <strong>${currentLang === 'hi' ? 'जन्म कालीन दशा शेष:' : 'Birth Dasha Balance:'}</strong> ${currentLang === 'hi' ? v.balance_hi : v.balance_str}
+          <strong>જન્મ કાલીન દશા શેષ (जन्म कालीन दशा शेष):</strong> ${toGu(v.balance_hi || v.balance_str)}
         </div>
         <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap:10px; margin-top:10px;">
           ${dashas.map(d => `
             <div style="background:#FFFFFF; padding:8px 10px; border-radius:8px; font-size:11.5px; border:1.5px solid #EADBC8; box-shadow:0 1px 4px rgba(46,28,16,0.03);">
-              <strong style="color:#7C2D12; font-size:12px;">${currentLang === 'hi' ? d.name_hi : d.name_en} (${d.years} ${currentLang === 'hi' ? 'वर्ष' : 'yrs'})</strong><br/>
-              <span style="color:#4B5563; font-size:11px; font-weight:600;">${d.range_str}</span>
+              <strong style="color:#7C2D12; font-size:12px;">${toGuWithHi(d.name_hi || d.name_en)} (${d.years} વર્ષ / वर्ष)</strong><br/>
+              <span style="color:#4B5563; font-size:11px; font-weight:600;">${toGu(d.range_str)}</span>
             </div>
           `).join('')}
         </div>
       `;
-
-      const gems = data.gemstones || [];
-      document.getElementById('gemstonesSummary').innerHTML = gems.map(g => `
-        <div style="margin-bottom:8px; padding:8px 12px; background:#FFFFFF; border:1.5px solid #EADBC8; border-radius:8px;">
-          <strong style="color:#7C2D12; font-size:12.5px; font-weight:800;">${currentLang === 'hi' ? g.role_hi : g.role_en}: ${currentLang === 'hi' ? g.gem_hi : g.gem_en}</strong>
-          <div style="font-size:11.5px; color:#4B5563; margin-top:3px; font-weight:600;">
-            <span>${currentLang === 'hi' ? 'धातु:' : 'Metal:'} ${currentLang === 'hi' ? g.metal_hi : g.metal_en}</span> • 
-            <span>${currentLang === 'hi' ? 'उंगली:' : 'Finger:'} ${currentLang === 'hi' ? g.finger_hi : g.finger_en}</span> • 
-            <span>${currentLang === 'hi' ? 'दिन:' : 'Day:'} ${currentLang === 'hi' ? g.day_hi : g.day_en}</span>
-          </div>
-          <div style="font-size:11px; color:#166534; background:#F0FDF4; border:1px solid #BBF7D0; border-radius:6px; padding:4px 8px; margin-top:5px; font-weight:600;">
-            📿 ${currentLang === 'hi' ? g.rudra_hi : g.rudra_en} | <span>मंत्र: ${g.mantra}</span>
-          </div>
-        </div>
-      `).join('');
     }
 
-    // Render Doshas
     function renderDoshas(doshas) {
       if (!doshas) return;
       const container = document.getElementById('doshasList');
@@ -3785,81 +3768,60 @@ def index_ui():
       const ks = doshas.kalsarpa || doshas.kaalsarp || {};
       const ss = doshas.sadesati || {};
       const pt = doshas.pitra_dosha || {};
-      const gc = doshas.guru_chandal || {};
-      const gr = doshas.grahan_dosha || {};
 
       container.innerHTML = `
         <div class="dosha-card">
           <div class="dosha-head">
-            <span>🔴 Kuja / Mangal Dosha</span>
-            <span class="badge" style="background:${mg.is_manglik ? '#FEE2E2':'#DCFCE7'}; color:${mg.is_manglik ? '#991B1B':'#166534'};">${mg.is_manglik ? 'Dosha Present':'Free'}</span>
+            <span>🔴 માંગલિક દોષ (मांगलिक दोष)</span>
+            <span class="badge" style="background:${mg.is_manglik ? '#FEE2E2':'#DCFCE7'}; color:${mg.is_manglik ? '#991B1B':'#166534'};">${mg.is_manglik ? 'દોષ ઉપસ્થિત (दोष उपस्थित)':'દોષ મુક્ત (दोष मुक्त)'}</span>
           </div>
-          <div style="font-size:11.5px; color:#854D0E; font-weight:700; margin:4px 0;"><strong>Placement:</strong> House ${mg.mars_house_lagna || '-'} from Lagna</div>
-          <div class="dosha-desc">${currentLang === 'hi' ? (mg.status_hi || '') : (mg.status_en || '')}</div>
-          <div class="remedy-pill"><strong>Remedy:</strong> Recite Hanuman Chalisa on Tuesdays and donate red lentils.</div>
+          <div style="font-size:11.5px; color:#854D0E; font-weight:700; margin:4px 0;"><strong>સ્થિતિ (स्थिति):</strong> ${toGu(mg.status_hi || mg.status_en || '')}</div>
+          <div style="font-size:11.5px; color:#2E1C10; line-height:1.45;">${toGu(mg.desc_hi || mg.desc_en || '')}</div>
+          ${mg.remedy_hi ? `<div style="background:#FEF3C7; padding:6px 8px; border-radius:6px; margin-top:6px; font-size:11px; color:#78350F;"><strong>શાસ્ત્રીય ઉપાય (उपाय):</strong> ${toGu(mg.remedy_hi)}</div>` : ''}
         </div>
 
         <div class="dosha-card">
           <div class="dosha-head">
-            <span>🐍 Kaal Sarp Yoga</span>
-            <span class="badge" style="background:${ks.is_kalsarpa ? '#FEE2E2':'#DCFCE7'}; color:${ks.is_kalsarpa ? '#991B1B':'#166534'};">${ks.is_kalsarpa ? 'Active':'Free'}</span>
+            <span>🐍 કાળસર્પ યોગ/દોષ (कालसर्प दोष)</span>
+            <span class="badge" style="background:${ks.is_kalsarpa ? '#FEE2E2':'#DCFCE7'}; color:${ks.is_kalsarpa ? '#991B1B':'#166534'};">${ks.is_kalsarpa ? 'દોષ ઉપસ્થિત (दोष उपस्थित)':'દોષ મુક્ત (दोष मुक्त)'}</span>
           </div>
-          <div style="font-size:11.5px; color:#854D0E; font-weight:700; margin:4px 0;"><strong>Type:</strong> ${currentLang === 'hi' ? (ks.type_hi || 'दोष मुक्त') : (ks.type_en || 'Free')}</div>
-          <div class="dosha-desc">${currentLang === 'hi' ? (ks.result_hi || '') : (ks.result_en || '')}</div>
-          <div class="remedy-pill"><strong>Remedy:</strong> Shiva Rudrabhishek and Maha Mrityunjaya Japa.</div>
+          <div style="font-size:11.5px; color:#854D0E; font-weight:700; margin:4px 0;"><strong>પ્રકાર (प्रकार):</strong> ${toGuWithHi(ks.type_hi || ks.type_en || '')}</div>
+          <div style="font-size:11.5px; color:#2E1C10; line-height:1.45;">${toGu(ks.desc_hi || ks.desc_en || '')}</div>
+          ${ks.remedy_hi ? `<div style="background:#FEF3C7; padding:6px 8px; border-radius:6px; margin-top:6px; font-size:11px; color:#78350F;"><strong>શાસ્ત્રીય ઉપાય (उपाय):</strong> ${toGu(ks.remedy_hi)}</div>` : ''}
         </div>
 
         <div class="dosha-card">
           <div class="dosha-head">
-            <span>🪐 Shani Sade Sati</span>
-            <span class="badge">${ss.type_en || 'Transit Phase'}</span>
+            <span>🪐 શનિ સાડાસાતી અને ઢૈય્યા (शनि साढ़ेसाती)</span>
+            <span class="badge" style="background:${ss.is_sadesati ? '#FEF3C7':'#DCFCE7'}; color:${ss.is_sadesati ? '#78350F':'#166534'};">${ss.is_sadesati ? 'સાડાસાતી પ્રભાવ (साढ़ेसाती सक्रिय)':'પ્રભાવ મુક્ત'}</span>
           </div>
-          <div style="font-size:11.5px; color:#9A3412; font-weight:700; margin:4px 0;"><strong>Phase:</strong> ${ss.phase_en || 'Favorable'} (${ss.start_year || 2025} - ${ss.end_year || 2028})</div>
-          <div class="dosha-desc">Saturn in ${ss.rashi_en || 'Aquarius/Pisces'}. Calls for discipline, patience and charity.</div>
-          <div class="remedy-pill"><strong>Remedy:</strong> Light mustard oil lamp under Peepal tree on Saturdays.</div>
+          <div style="font-size:11.5px; color:#854D0E; font-weight:700; margin:4px 0;"><strong>ચરણ (चरण):</strong> ${toGuWithHi(ss.phase_hi || ss.phase_en || '')}</div>
+          <div style="font-size:11.5px; color:#2E1C10; line-height:1.45;">${toGu(ss.desc_hi || ss.desc_en || '')}</div>
+          ${ss.remedy_hi ? `<div style="background:#FEF3C7; padding:6px 8px; border-radius:6px; margin-top:6px; font-size:11px; color:#78350F;"><strong>શાસ્ત્રીય ઉપાય (उपाय):</strong> ${toGu(ss.remedy_hi)}</div>` : ''}
         </div>
 
         <div class="dosha-card">
           <div class="dosha-head">
-            <span>☀️ ${currentLang === 'hi' ? (pt.title_hi || 'पितृ दोष') : (pt.title_en || 'Pitra Dosha')}</span>
-            <span class="badge" style="background:${pt.is_present ? '#FEE2E2':'#DCFCE7'}; color:${pt.is_present ? '#991B1B':'#166534'};">${pt.is_present ? 'Active':'Free'}</span>
+            <span>☀️ પિતૃ દોષ વિશ્લેષણ (पितृ दोष)</span>
+            <span class="badge" style="background:${pt.is_pitra ? '#FEE2E2':'#DCFCE7'}; color:${pt.is_pitra ? '#991B1B':'#166534'};">${pt.is_pitra ? 'દોષ ઉપસ્થિત':'દોષ મુક્ત'}</span>
           </div>
-          <div class="dosha-desc">${currentLang === 'hi' ? (pt.desc_hi || '') : (pt.desc_en || '')}</div>
-          <div class="remedy-pill"><strong>Remedy:</strong> ${currentLang === 'hi' ? (pt.remedy_hi || '') : (pt.remedy_en || '')}</div>
-        </div>
-
-        <div class="dosha-card">
-          <div class="dosha-head">
-            <span>📿 ${currentLang === 'hi' ? (gc.title_hi || 'गुरु चांडाल योग') : (gc.title_en || 'Guru Chandal Yoga')}</span>
-            <span class="badge" style="background:${gc.is_present ? '#FEE2E2':'#DCFCE7'}; color:${gc.is_present ? '#991B1B':'#166534'};">${gc.is_present ? 'Active':'Free'}</span>
-          </div>
-          <div class="dosha-desc">${currentLang === 'hi' ? (gc.desc_hi || '') : (gc.desc_en || '')}</div>
-          <div class="remedy-pill"><strong>Remedy:</strong> ${currentLang === 'hi' ? (gc.remedy_hi || '') : (gc.remedy_en || '')}</div>
-        </div>
-
-        <div class="dosha-card">
-          <div class="dosha-head">
-            <span>🌕 ${currentLang === 'hi' ? (gr.title_hi || 'सूर्य/चन्द्र ग्रहण दोष') : (gr.title_en || 'Grahan Dosha')}</span>
-            <span class="badge" style="background:${gr.is_present ? '#FEE2E2':'#DCFCE7'}; color:${gr.is_present ? '#991B1B':'#166534'};">${gr.is_present ? 'Active':'Free'}</span>
-          </div>
-          <div class="dosha-desc">${currentLang === 'hi' ? (gr.desc_hi || '') : (gr.desc_en || '')}</div>
-          <div class="remedy-pill"><strong>Remedy:</strong> ${currentLang === 'hi' ? (gr.remedy_hi || '') : (gr.remedy_en || '')}</div>
+          <div style="font-size:11.5px; color:#2E1C10; line-height:1.45;">${toGu(pt.desc_hi || pt.desc_en || '')}</div>
+          ${pt.remedy_hi ? `<div style="background:#FEF3C7; padding:6px 8px; border-radius:6px; margin-top:6px; font-size:11px; color:#78350F;"><strong>શાસ્ત્રીય ઉપાય (उपाय):</strong> ${toGu(pt.remedy_hi)}</div>` : ''}
         </div>
       `;
     }
 
-    // Render Yogas
     function renderYogas(yogas) {
       const container = document.getElementById('yogasList');
+      if (!container || !yogas) return;
       container.innerHTML = yogas.map(y => `
-        <div style="background:#FFFFFF; padding:12px 14px; border-radius:10px; border:1.5px solid #EADBC8; box-shadow:0 1px 4px rgba(46,28,16,0.03);">
-          <strong style="color:#7C2D12; font-size:13px; font-weight:800;">${currentLang === 'hi' ? y.name_hi : y.name_en}</strong>
-          <p style="font-size:11.8px; color:#2E1C10; margin-top:4px; line-height:1.5; font-weight:500;">${currentLang === 'hi' ? y.desc_hi : y.desc_en}</p>
+        <div style="background:#FFFDF9; border:1.5px solid #FDE68A; border-radius:8px; padding:10px 12px; margin-bottom:8px; border-left:4px solid #D97706;">
+          <strong style="color:#7C2D12; font-size:12.5px; font-weight:800;">🌟 ${toGuWithHi(y.name_hi || y.name_en)}</strong>
+          <p style="font-size:11.8px; color:#2E1C10; margin-top:4px; line-height:1.5; font-weight:500;">${toGu(y.desc_hi || y.desc_en)}</p>
         </div>
       `).join('');
     }
 
-    // Render Shadbala and SAV
     function renderShadbalaAndSAV(data) {
       if (!data.shadbala) return;
       const sb = data.shadbala;
@@ -4396,95 +4358,77 @@ def index_ui():
     // ===============================================================
     function renderLalKitab(lk) {
       if (!lk) return;
-      
-      // Rins Container
       const rins = lk.rins || [];
       const rinsBox = document.getElementById('lkRinsContainer');
       if (rinsBox) {
         if (rins.length === 0) {
           rinsBox.innerHTML = `
             <div style="background:#F0FDF4; border:1.5px solid #BBF7D0; border-radius:8px; padding:12px; color:#166534; font-size:12.5px; font-weight:700;">
-              ✨ <strong>ऋण मुक्त कुंडली (Debt-Free Horoscope):</strong> No active Lal Kitab ancestral debts found in native chart. Kundli is auspicious.
+              ✨ <strong>ઋણ મુક્ત કુંડળી (ऋण मुक्त कुंडली):</strong> કુંડળીમાં કોઈ સક્રિય લાલ કિતાબ પિતૃ ઋણ નથી. જાતક માટે કુંડળી અત્યંત શુભ છે.
             </div>
           `;
         } else {
           rinsBox.innerHTML = rins.map(r => `
             <div style="background:#FEF2F2; border:1.5px solid #FCA5A5; border-radius:10px; padding:14px; margin-bottom:10px;">
               <div style="display:flex; justify-content:space-between; align-items:center;">
-                <strong style="color:#991B1B; font-size:13.5px;">⚠️ ${currentLang === 'hi' ? r.name_hi : r.name_en}</strong>
-                <span class="badge" style="background:#FEE2E2; color:#991B1B;">Lal Kitab Rin Active</span>
+                <strong style="color:#991B1B; font-size:13.5px;">⚠️ ${toGuWithHi(r.name_hi || r.name_en)}</strong>
+                <span class="badge" style="background:#FEE2E2; color:#991B1B;">લાલ કિતાબ ઋણ સક્રિય</span>
               </div>
-              <p style="font-size:12px; color:#4B5563; margin:6px 0;"><strong>Cause / कारण:</strong> ${currentLang === 'hi' ? r.cause_hi : r.cause_en}</p>
-              <div style="background:#FFFFFF; border:1px solid #FECACA; border-radius:6px; padding:8px 12px; margin-top:6px; font-size:12px; color:#B91C1C; font-weight:700;">
-                🕉️ <strong>Shastriya Lal Kitab Upay:</strong> ${currentLang === 'hi' ? r.remedy_hi : r.remedy_en}
+              <p style="font-size:12px; color:#4B5563; margin:6px 0;">${toGu(r.cause_hi || r.cause_en || '')}</p>
+              <div style="background:#FFFBEB; border:1px solid #FDE68A; border-radius:6px; padding:8px 10px; font-size:11.5px; color:#78350F;">
+                🪔 <strong>અચૂક લાલ કિતાબ ઉપાય (अचूक उपाय):</strong> ${toGu(r.remedy_hi || r.remedy_en || '')}
               </div>
             </div>
           `).join('');
         }
       }
-
-      // Lal Kitab 9 Planets Table
-      const pRows = lk.planet_rows || [];
-      const tbody = document.getElementById('lkPlanetsBody');
-      if (tbody && pRows.length > 0) {
-        tbody.innerHTML = pRows.map(pr => {
-          const isSoya = pr.soya_en === 'Yes';
-          const isAwakener = pr.kismat_en === 'Yes';
-          const isBenefic = pr.is_benefic;
-          return `
-            <tr>
-              <td style="font-weight:800; color:#7C2D12;">${currentLang === 'hi' ? pr.planet_hi : pr.planet_en}</td>
-              <td style="font-weight:800; color:#9A3412;">House ${pr.house}</td>
-              <td style="font-weight:600;">${currentLang === 'hi' ? pr.sign_hi : pr.sign_en}</td>
-              <td><span class="badge" style="background:${isSoya ? '#FEF3C7':'#DCFCE7'}; color:${isSoya ? '#854D0E':'#166534'};">${currentLang === 'hi' ? pr.soya_hi : pr.soya_en}</span></td>
-              <td><span class="badge" style="background:${isAwakener ? '#FEF08A':'#F3F4F6'}; color:${isAwakener ? '#854D0E':'#6B7280'}; font-weight:800;">${isAwakener ? '★ Kismat Jagane Wala' : '-'}</span></td>
-              <td><span style="font-weight:800; color:${isBenefic ? '#166534':'#991B1B'};">${currentLang === 'hi' ? pr.status_hi : pr.status_en}</span></td>
-            </tr>
-          `;
-        }).join('');
-      }
     }
 
-    // ===============================================================
-    // ADVANCED MODULE 3: RATNA, SIDDHA YANTRA & DIVINE REMEDIES
-    // ===============================================================
     function renderGemstonesAndYantras(data) {
       const gems = data.gemstones || [];
       const grid = document.getElementById('gemstonesFullGrid');
       if (grid && gems.length > 0) {
-        grid.innerHTML = gems.map(g => `
+        grid.innerHTML = gems.map(g => {
+          const roleTxt = toGuWithHi(g.role_hi || g.role_en);
+          const gemTxt = toGuWithHi(g.gem_hi || g.gem_en);
+          const planetTxt = toGuWithHi(g.planet_hi || g.planet_en);
+          const metalTxt = toGuWithHi(g.metal_hi || g.metal_en);
+          const fingerTxt = toGuWithHi(g.finger_hi || g.finger_en);
+          const dayTxt = toGuWithHi(g.day_hi || g.day_en);
+          const rudraTxt = toGuWithHi(g.rudra_hi || g.rudra_en);
+          const mantraTxt = toGu(g.mantra);
+          return `
           <div style="background:#FFFFFF; border:1.5px solid #EADBC8; border-radius:10px; padding:14px; box-shadow:0 2px 6px rgba(46,28,16,0.03); border-top:4px solid #C2540A;">
-            <div style="font-size:13px; font-weight:900; color:#7C2D12; margin-bottom:4px;">${currentLang === 'hi' ? g.role_hi : g.role_en}</div>
-            <div style="font-size:15px; font-weight:900; color:#C2540A; margin-bottom:8px;">💎 ${currentLang === 'hi' ? g.gem_hi : g.gem_en}</div>
+            <div style="font-size:13px; font-weight:900; color:#7C2D12; margin-bottom:4px;">${roleTxt}</div>
+            <div style="font-size:15px; font-weight:900; color:#C2540A; margin-bottom:8px;">💎 ${gemTxt}</div>
             <div style="font-size:11.8px; color:#4B5563; line-height:1.6;">
-              <div><strong>Ruling Graha:</strong> ${currentLang === 'hi' ? g.planet_hi : g.planet_en}</div>
-              <div><strong>Auspicious Metal:</strong> ${currentLang === 'hi' ? g.metal_hi : g.metal_en}</div>
-              <div><strong>Right Finger:</strong> ${currentLang === 'hi' ? g.finger_hi : g.finger_en}</div>
-              <div><strong>Wearing Day:</strong> ${currentLang === 'hi' ? g.day_hi : g.day_en}</div>
-              <div><strong>Recommended Rudraksha:</strong> <span style="color:#166534; font-weight:700;">${currentLang === 'hi' ? g.rudra_hi : g.rudra_en}</span></div>
+              <div><strong>શાસક ગ્રહ (शासक ग्रह):</strong> ${planetTxt}</div>
+              <div><strong>શુભ ધાતુ (शुभ धातु):</strong> ${metalTxt}</div>
+              <div><strong>ધારણ આંગળી (अंगुली):</strong> ${fingerTxt}</div>
+              <div><strong>ધારણ વાર (वार):</strong> ${dayTxt}</div>
+              <div><strong>શુભ રુદ્રાક્ષ (रुद्राक्ष):</strong> <span style="color:#166534; font-weight:700;">${rudraTxt}</span></div>
             </div>
             <div style="background:#FFFBEB; border:1px solid #FDE68A; border-radius:6px; padding:8px 10px; margin-top:10px; font-size:11.2px; color:#78350F; font-weight:700;">
-              📿 <strong>Beej Mantra:</strong> ${g.mantra}
+              📿 <strong>બીજ મંત્ર (बीज मंत्र):</strong> ${mantraTxt}
             </div>
           </div>
-        `).join('');
+        `}).join('');
       }
 
       // Siddha Yantras
       const yBox = document.getElementById('yantrasList');
       if (yBox) {
-        const p1 = (data.meta && data.meta.lagna_lord_en) || 'Mars';
         const yantras = [
-          {name: 'Shri Mangal Yantra (श्री मंगल यंत्र)', use: 'For Health, Vitality, Land & Protection from Obstacles', forP: 'Mars / Lagnesh'},
-          {name: 'Shri Brihaspati Yantra (श्री गुरु यंत्र)', use: 'For Wisdom, Financial Expansion & Family Prosperity', forP: 'Jupiter / Panchamesh'},
-          {name: 'Shri Chandra Yantra (श्री चंद्र यंत्र)', use: 'For Mental Peace, Emotional Balance & Bhagya Growth', forP: 'Moon / Bhagyesh'},
-          {name: 'Sampoorna Maha Mrityunjaya Yantra (महामृत्युंजय यंत्र)', use: 'Supreme Kavach for Longevity & Eliminating Negative Influences', forP: 'Universal Vedic Raksha'}
+          {name: 'શ્રી મંગળ યંત્ર (श्री मंगल यंत्र)', use: 'શારીરિક આરોગ્ય, ઊર્જા, ભૂમિ લાભ અને કષ્ટ નિવારણ માટે (आरोग्य, भूमि व कष्ट निवारण)', forP: 'મંગળ / લગ્નેશ (मंगल / लग्नेश)'},
+          {name: 'શ્રી ગુરુ / બૃહસ્પતિ યંત્ર (श्री गुरु यंत्र)', use: 'ઉચ્ચ જ્ઞાન, બુદ્ધિ, આર્થિક સમૃદ્ધિ અને પારિવારિક સુખ (ज्ञान, समृद्धि व सुख)', forP: 'ગુરુ / પંચમેશ (गुरु / पंचमेश)'},
+          {name: 'શ્રી ચંદ્ર યંત્ર (श्री चंद्र यंत्र)', use: 'માનસિક શાંતિ, ભાવનાત્મક સ્થિરતા અને ભાગ્યોદય વૃદ્ધિ (मानसिक शांति व भाग्योदय)', forP: 'ચંદ્ર / ભાગ્યેશ (चंद्र / भाग्येश)'},
+          {name: 'સંપૂર્ણ મહામૃત્યુંજય યંત્ર (महामृत्युंजय यंत्र)', use: 'દીર્ઘાયુષ્ય, અકાળ મૃત્યુ ભય નિવારણ અને સર્વ રક્ષા કવચ (दीर्घायु व सर्व रक्षा कवच)', forP: 'સાર્વત્રિક વૈદિક સુરક્ષા (सर्व रक्षा)'}
         ];
         yBox.innerHTML = yantras.map(y => `
           <div style="background:#FFFFFF; border:1.5px solid #FDE68A; border-radius:8px; padding:10px;">
-            <div style="font-weight:900; color:#7C2D12; font-size:12px;">ॐ ${y.name}</div>
-            <div style="font-size:11.2px; color:#574032; margin-top:3px;">${y.use}</div>
-            <div style="font-size:10.5px; color:#C2540A; font-weight:700; margin-top:4px;">Recommended for: ${y.forP}</div>
+            <div style="font-weight:900; color:#7C2D12; font-size:12.5px;">ॐ ${y.name}</div>
+            <div style="font-size:11.5px; color:#574032; margin-top:3px; line-height:1.4;">${y.use}</div>
+            <div style="font-size:11px; color:#C2540A; font-weight:800; margin-top:4px;">ભલામણ (फोकस): ${y.forP}</div>
           </div>
         `).join('');
       }
@@ -4500,14 +4444,14 @@ def index_ui():
       const avGrid = document.getElementById('avkahadaGrid');
       if (avGrid) {
         avGrid.innerHTML = `
-          <div><strong>पाया (Paya):</strong> <span style="color:#C2540A; font-weight:800;">${currentLang === 'hi' ? (av.paya_hi || '-') : (av.paya_en || '-')}</span></div>
-          <div><strong>वर्ण (Varna):</strong> <span style="font-weight:700;">${currentLang === 'hi' ? (av.varna_hi || '-') : (av.varna_en || '-')}</span></div>
-          <div><strong>योनि (Yoni):</strong> <span style="font-weight:700;">${currentLang === 'hi' ? (av.yoni_hi || '-') : (av.yoni_en || '-')}</span></div>
-          <div><strong>गण (Gana):</strong> <span style="font-weight:700; color:#166534;">${currentLang === 'hi' ? (av.gana_hi || '-') : (av.gana_en || '-')}</span></div>
-          <div><strong>वश्य (Vasya):</strong> <span style="font-weight:700;">${currentLang === 'hi' ? (av.vasya_hi || '-') : (av.vasya_en || '-')}</span></div>
-          <div><strong>नाड़ी (Nadi):</strong> <span style="font-weight:700;">${currentLang === 'hi' ? (av.nadi_hi || '-') : (av.nadi_en || '-')}</span></div>
+          <div><strong>પાયો (पाया):</strong> <span style="color:#C2540A; font-weight:800;">${toGuWithHi(av.paya_hi || av.paya_en || '-')}</span></div>
+          <div><strong>વર્ણ (वर्ण):</strong> <span style="font-weight:700;">${toGuWithHi(av.varna_hi || av.varna_en || '-')}</span></div>
+          <div><strong>યોનિ (योनि):</strong> <span style="font-weight:700;">${toGuWithHi(av.yoni_hi || av.yoni_en || '-')}</span></div>
+          <div><strong>ગણ (गण):</strong> <span style="font-weight:700; color:#166534;">${toGuWithHi(av.gana_hi || av.gana_en || '-')}</span></div>
+          <div><strong>વશ્ય (वश्य):</strong> <span style="font-weight:700;">${toGuWithHi(av.vasya_hi || av.vasya_en || '-')}</span></div>
+          <div><strong>નાડી (नाड़ी):</strong> <span style="font-weight:700;">${toGuWithHi(av.nadi_hi || av.nadi_en || '-')}</span></div>
           <div style="grid-column: span 2; margin-top:4px; padding-top:4px; border-top:1px dashed #EADBC8;">
-            <strong>दशा शेष (Dasha Balance):</strong> <span style="color:#7C2D12; font-weight:800;">${av.dasa_balance || '-'}</span>
+            <strong>દશા શેષ (दशा शेष):</strong> <span style="color:#7C2D12; font-weight:800;">${toGu(av.dasa_balance || '-')}</span>
           </div>
         `;
       }
@@ -4515,14 +4459,14 @@ def index_ui():
       const favGrid = document.getElementById('favourableGrid');
       if (favGrid) {
         favGrid.innerHTML = `
-          <div><strong>शुभ अंक (Lucky No):</strong> <span style="color:#C2540A; font-weight:800; font-size:13px;">${fav.lucky_num || '-'}</span></div>
-          <div><strong>अनुकूल अंक (Good Nos):</strong> <span style="font-weight:700;">${fav.good_nums || '-'}</span></div>
-          <div><strong>शुभ वार (Lucky Days):</strong> <span style="font-weight:700;">${fav.days || '-'}</span></div>
-          <div><strong>मित्र ग्रह (Friendly Grahas):</strong> <span style="font-weight:700;">${fav.planets || '-'}</span></div>
-          <div><strong>शुभ धातु (Metal):</strong> <span style="font-weight:700;">${fav.metal || '-'}</span></div>
-          <div><strong>शुभ रत्न (Gemstone):</strong> <span style="font-weight:700; color:#166534;">${fav.stone || '-'}</span></div>
+          <div><strong>શુભ અંક (शुभ अंक):</strong> <span style="color:#C2540A; font-weight:800; font-size:13px;">${fav.lucky_num || '-'}</span></div>
+          <div><strong>અનુકૂળ અંક (अनुकूल अंक):</strong> <span style="font-weight:700;">${fav.good_nums || '-'}</span></div>
+          <div><strong>શુભ વાર (शुभ वार):</strong> <span style="font-weight:700;">${toGuWithHi(fav.days || '-')}</span></div>
+          <div><strong>મિત્ર ગ્રહ (मित्र ग्रह):</strong> <span style="font-weight:700;">${toGuWithHi(fav.planets || '-')}</span></div>
+          <div><strong>શુભ ધાતુ (शुभ धातु):</strong> <span style="font-weight:700;">${toGuWithHi(fav.metal || '-')}</span></div>
+          <div><strong>શુભ રત્ન (शुभ रत्न):</strong> <span style="font-weight:700; color:#166534;">${toGuWithHi(fav.stone || '-')}</span></div>
           <div style="grid-column: span 2; margin-top:4px; padding-top:4px; border-top:1px dashed #EADBC8;">
-            <strong>भाग्योदय वर्ष (Fortune Years):</strong> <span style="color:#7C2D12; font-weight:800;">${fav.good_years || '-'}</span>
+            <strong>ભાગ્યોદય વર્ષ (भाग्योदय वर्ष):</strong> <span style="color:#7C2D12; font-weight:800;">${fav.good_years || '-'}</span>
           </div>
         `;
       }

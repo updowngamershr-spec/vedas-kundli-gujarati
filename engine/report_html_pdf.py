@@ -235,7 +235,11 @@ def build_full_56_page_html(data: dict, lang: str = "gu", package: str = "maha")
 
     def T(en_txt: str, hi_txt: str) -> str:
         if is_gu:
-            return to_gujarati(hi_txt)
+            gu_txt = to_gujarati(hi_txt)
+            # Render Gujarati as primary, with Hindi in bracket
+            if gu_txt and hi_txt and gu_txt != hi_txt:
+                return f"{gu_txt} ({hi_txt})"
+            return gu_txt or hi_txt
         elif is_hi:
             return hi_txt
         elif is_both:
