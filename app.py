@@ -3180,6 +3180,7 @@ def index_ui():
   <script>
     let currentKundliData = null;
     let currentLang = 'gu';
+    let currentActiveNav = 'new_kundli';
     let currentChartStyle = 'north';
     let currentDivisional = 'D9';
     let currentSingleZipUrl = null;
@@ -3201,6 +3202,7 @@ def index_ui():
     }
 
     function switchNav(viewId) {
+      currentActiveNav = viewId;
       // Update Mobile Bottom Bar
       document.querySelectorAll('.mob-tab-btn').forEach(btn => btn.classList.remove('active'));
       const activeMobTab = document.getElementById('mobtab_' + viewId);
@@ -3761,154 +3763,158 @@ def index_ui():
     }
 
     function setLang(l) {
-      currentLang = l;
+      try {
+        currentLang = l;
 
-      const elGu = document.getElementById('lang_gu');
-      const elHi = document.getElementById('lang_hi');
-      const elEn = document.getElementById('lang_en');
-      if (elGu) elGu.classList.toggle('active', l === 'gu');
-      if (elHi) elHi.classList.toggle('active', l === 'hi');
-      if (elEn) elEn.classList.toggle('active', l === 'en');
+        const elGu = document.getElementById('lang_gu');
+        const elHi = document.getElementById('lang_hi');
+        const elEn = document.getElementById('lang_en');
+        if (elGu) elGu.classList.toggle('active', l === 'gu');
+        if (elHi) elHi.classList.toggle('active', l === 'hi');
+        if (elEn) elEn.classList.toggle('active', l === 'en');
 
-      // 🌟 STEP 1: DISPLAY LUXURY PROGRESS LOADING MODAL
-      const modal = document.getElementById('loadingModal');
-      const bar = document.getElementById('loadingBarFill');
-      const txt = document.getElementById('loadingStageText');
-      const pct = document.getElementById('loadingPercentText');
-      const titleEl = modal ? modal.querySelector('h3') : null;
+        // 🌟 1. Display Luxury Progress Modal
+        const modal = document.getElementById('loadingModal');
+        const bar = document.getElementById('loadingBarFill');
+        const txt = document.getElementById('loadingStageText');
+        const pct = document.getElementById('loadingPercentText');
+        const titleEl = modal ? modal.querySelector('h3') : null;
 
-      if (modal) {
-        modal.style.display = 'flex';
-        modal.style.pointerEvents = 'auto';
-        if (bar) bar.style.width = '35%';
-        if (pct) pct.innerText = '35%';
+        if (modal) {
+          modal.style.display = 'flex';
+          modal.style.pointerEvents = 'auto';
+          if (bar) bar.style.width = '45%';
+          if (pct) pct.innerText = '45%';
 
-        if (l === 'gu') {
-          if (titleEl) titleEl.innerText = 'કુંડળી ભાષા પરિવર્તન (LANGUAGE SWITCH)';
-          if (txt) txt.innerText = '✨ ભાષા બદલાઈ રહી છે: સંપૂર્ણ ગુજરાતી અને હિન્દી આવૃત્તિ સક્રિય...';
-        } else if (l === 'hi') {
-          if (titleEl) titleEl.innerText = 'कुंडली भाषा परिवर्तन (LANGUAGE SWITCH)';
-          if (txt) txt.innerText = '✨ भाषा बदली जा रही है: सम्पूर्ण हिन्दी संस्करण लोड हो रहा है...';
-        } else {
-          if (titleEl) titleEl.innerText = 'SWITCHING SYSTEM LANGUAGE';
-          if (txt) txt.innerText = '✨ Switching Language: Loading English Astrological Suite...';
-        }
-      }
-
-      // 🌟 STEP 2: TRIGGER SCREEN-WIDE COSMIC AURA TRANSITION
-      const vp = document.querySelector('.desktop-viewport') || document.body;
-      vp.classList.remove('cosmic-lang-transition');
-      void vp.offsetWidth; // reflow
-      vp.classList.add('cosmic-lang-transition');
-
-      // 🌟 STEP 3: INSTANT CLIENT-SIDE UI LOCALIZATION (0ms delay)
-      updateUILanguage(l);
-
-      // 🌟 STEP 4: INSTANT DATA RE-RENDER IF KUNDLI ACTIVE
-      if (currentKundliData) {
-        // Update stats
-        if (l === 'gu') {
-          document.getElementById('statLagna').innerText = toGuWithHi(currentKundliData.meta.lagna_hi || currentKundliData.meta.lagna_en);
-          document.getElementById('statRasi').innerText = toGuWithHi(currentKundliData.meta.rasi_hi || currentKundliData.meta.rasi_en);
-          document.getElementById('statNakshatra').innerText = toGuWithHi(currentKundliData.meta.nakshatra_hi || currentKundliData.meta.nakshatra_en);
-          document.getElementById('statManglik').innerText = toGuWithHi(currentKundliData.manglik.status_hi || currentKundliData.manglik.status_en);
-          document.getElementById('statDasha').innerText = toGu(currentKundliData.vimshottari.balance_hi || currentKundliData.vimshottari.balance_str);
-        } else if (l === 'hi') {
-          document.getElementById('statLagna').innerText = (currentKundliData.meta.lagna_hi || currentKundliData.meta.lagna_en);
-          document.getElementById('statRasi').innerText = (currentKundliData.meta.rasi_hi || currentKundliData.meta.rasi_en);
-          document.getElementById('statNakshatra').innerText = (currentKundliData.meta.nakshatra_hi || currentKundliData.meta.nakshatra_en);
-          document.getElementById('statManglik').innerText = (currentKundliData.manglik.status_hi || currentKundliData.manglik.status_en);
-          document.getElementById('statDasha').innerText = (currentKundliData.vimshottari.balance_hi || currentKundliData.vimshottari.balance_str);
-        } else {
-          document.getElementById('statLagna').innerText = currentKundliData.meta.lagna_en;
-          document.getElementById('statRasi').innerText = currentKundliData.meta.rasi_en;
-          document.getElementById('statNakshatra').innerText = currentKundliData.meta.nakshatra_en;
-          document.getElementById('statManglik').innerText = currentKundliData.manglik.status_en;
-          document.getElementById('statDasha').innerText = currentKundliData.vimshottari.balance_str;
-        }
-
-        renderD1Svg();
-        onDivisionalChange();
-        renderPlanetsTable(currentKundliData.planets);
-        renderBhavas(currentKundliData.bhavas);
-        renderDashaAndGems(currentKundliData);
-        renderDoshas(currentKundliData.doshas);
-        renderYogas(currentKundliData.yogas);
-        renderShadbalaAndSAV(currentKundliData);
-        if (currentKundliData.kp) renderKPSystem(currentKundliData.kp);
-        if (currentKundliData.lal_kitab) renderLalKitab(currentKundliData.lal_kitab);
-        if (currentKundliData.gemstones) renderGemstonesAndYantras(currentKundliData);
-        if (currentKundliData.avkahada || currentKundliData.favourable) renderAvkahadaAndFavourable(currentKundliData);
-      }
-
-      // Progressively advance loading bar to 100% over 350ms
-      if (bar) bar.style.width = '75%';
-      if (pct) pct.innerText = '75%';
-
-      setTimeout(() => {
-        if (bar) bar.style.width = '100%';
-        if (pct) pct.innerText = '100%';
-
-        setTimeout(() => {
-          if (modal) {
-            modal.style.display = 'none';
-            modal.style.pointerEvents = 'none';
+          if (l === 'gu') {
+            if (titleEl) titleEl.innerText = 'કુંડળી ભાષા પરિવર્તન (LANGUAGE SWITCH)';
+            if (txt) txt.innerText = '✨ ભાષા બદલાઈ રહી છે: સંપૂર્ણ ગુજરાતી અને હિન્દી આવૃત્તિ સક્રિય...';
+          } else if (l === 'hi') {
+            if (titleEl) titleEl.innerText = 'कुंडली भाषा परिवर्तन (LANGUAGE SWITCH)';
+            if (txt) txt.innerText = '✨ भाषा बदली जा रही है: सम्पूर्ण हिन्दी संस्करण लोड हो रहा है...';
+          } else {
+            if (titleEl) titleEl.innerText = 'SWITCHING SYSTEM LANGUAGE';
+            if (txt) txt.innerText = '✨ Switching Language: Loading English Astrological Suite...';
           }
+        }
 
-          // Show Auspicious Floating Toast
-          const toast = document.getElementById('langSwitchToast');
-          const toastTxt = document.getElementById('langSwitchToastText');
-          if (toast && toastTxt) {
+        // 🌟 2. Screen-Wide Cosmic Aura Transition
+        const vp = document.querySelector('.desktop-viewport') || document.body;
+        if (vp) {
+          vp.classList.remove('cosmic-lang-transition');
+          void vp.offsetWidth;
+          vp.classList.add('cosmic-lang-transition');
+        }
+
+        // 🌟 3. Instant UI Localization
+        updateUILanguage(l);
+
+        // 🌟 4. Instant Data Re-render
+        if (currentKundliData) {
+          try {
             if (l === 'gu') {
-              toastTxt.innerHTML = '✨ <b>સંપૂર્ણ ગુજરાતી + હિન્દી આવૃત્તિ સક્રિય</b> (Gujarati &amp; Hindi Active)';
+              if (document.getElementById('statLagna')) document.getElementById('statLagna').innerText = toGuWithHi(currentKundliData.meta.lagna_hi || currentKundliData.meta.lagna_en);
+              if (document.getElementById('statRasi')) document.getElementById('statRasi').innerText = toGuWithHi(currentKundliData.meta.rasi_hi || currentKundliData.meta.rasi_en);
+              if (document.getElementById('statNakshatra')) document.getElementById('statNakshatra').innerText = toGuWithHi(currentKundliData.meta.nakshatra_hi || currentKundliData.meta.nakshatra_en);
+              if (document.getElementById('statManglik')) document.getElementById('statManglik').innerText = toGuWithHi(currentKundliData.manglik.status_hi || currentKundliData.manglik.status_en);
+              if (document.getElementById('statDasha')) document.getElementById('statDasha').innerText = toGu(currentKundliData.vimshottari.balance_hi || currentKundliData.vimshottari.balance_str);
             } else if (l === 'hi') {
-              toastTxt.innerHTML = '✨ <b>सम्पूर्ण हिन्दी संस्करण सक्रिय</b> (Hindi Edition Active)';
+              if (document.getElementById('statLagna')) document.getElementById('statLagna').innerText = (currentKundliData.meta.lagna_hi || currentKundliData.meta.lagna_en);
+              if (document.getElementById('statRasi')) document.getElementById('statRasi').innerText = (currentKundliData.meta.rasi_hi || currentKundliData.meta.rasi_en);
+              if (document.getElementById('statNakshatra')) document.getElementById('statNakshatra').innerText = (currentKundliData.meta.nakshatra_hi || currentKundliData.meta.nakshatra_en);
+              if (document.getElementById('statManglik')) document.getElementById('statManglik').innerText = (currentKundliData.manglik.status_hi || currentKundliData.manglik.status_en);
+              if (document.getElementById('statDasha')) document.getElementById('statDasha').innerText = (currentKundliData.vimshottari.balance_hi || currentKundliData.vimshottari.balance_str);
             } else {
-              toastTxt.innerHTML = '✨ <b>English Vedic Edition Active</b>';
+              if (document.getElementById('statLagna')) document.getElementById('statLagna').innerText = currentKundliData.meta.lagna_en;
+              if (document.getElementById('statRasi')) document.getElementById('statRasi').innerText = currentKundliData.meta.rasi_en;
+              if (document.getElementById('statNakshatra')) document.getElementById('statNakshatra').innerText = currentKundliData.meta.nakshatra_en;
+              if (document.getElementById('statManglik')) document.getElementById('statManglik').innerText = currentKundliData.manglik.status_en;
+              if (document.getElementById('statDasha')) document.getElementById('statDasha').innerText = currentKundliData.vimshottari.balance_str;
             }
-            toast.classList.add('toast-visible');
-            clearTimeout(window._toastTimer);
-            window._toastTimer = setTimeout(() => {
-              toast.classList.remove('toast-visible');
-            }, 2400);
-          }
-        }, 150);
-      }, 250);
 
-      // Background refresh of Report Studio if loaded
-      const repFrame = document.getElementById('reportFrame');
-      if (repFrame && repFrame.srcdoc) {
-        setTimeout(() => { loadInAppPdfPreview(); }, 100);
+            if (typeof renderPlanetsTable === 'function') renderPlanetsTable(currentKundliData.planets);
+            if (typeof renderBhavas === 'function') renderBhavas(currentKundliData.bhavas);
+            if (typeof renderDashaAndGems === 'function') renderDashaAndGems(currentKundliData);
+            if (typeof renderDoshas === 'function') renderDoshas(currentKundliData.doshas);
+            if (typeof renderYogas === 'function') renderYogas(currentKundliData.yogas);
+            if (typeof renderGemstonesAndYantras === 'function') renderGemstonesAndYantras(currentKundliData);
+            if (typeof renderAvkahadaAndFavourable === 'function') renderAvkahadaAndFavourable(currentKundliData);
+          } catch(errRender) {
+            console.warn('Re-render non-fatal error:', errRender);
+          }
+        }
+      } catch(e) {
+        console.error('setLang general error:', e);
+      } finally {
+        // 🌟 5. GUARANTEED DISMISSAL AFTER 380ms
+        setTimeout(() => {
+          const modal = document.getElementById('loadingModal');
+          const bar = document.getElementById('loadingBarFill');
+          const pct = document.getElementById('loadingPercentText');
+          if (bar) bar.style.width = '100%';
+          if (pct) pct.innerText = '100%';
+
+          setTimeout(() => {
+            if (modal) {
+              modal.style.display = 'none';
+              modal.style.pointerEvents = 'none';
+            }
+
+            // Show Floating Toast
+            const toast = document.getElementById('langSwitchToast');
+            const toastTxt = document.getElementById('langSwitchToastText');
+            if (toast && toastTxt) {
+              if (l === 'gu') {
+                toastTxt.innerHTML = '✨ <b>સંપૂર્ણ ગુજરાતી + હિન્દી આવૃત્તિ સક્રિય</b> (Gujarati &amp; Hindi Active)';
+              } else if (l === 'hi') {
+                toastTxt.innerHTML = '✨ <b>सम्पूर्ण हिन्दी संस्करण सक्रिय</b> (Hindi Edition Active)';
+              } else {
+                toastTxt.innerHTML = '✨ <b>English Vedic Edition Active</b>';
+              }
+              toast.classList.add('toast-visible');
+              clearTimeout(window._toastTimer);
+              window._toastTimer = setTimeout(() => {
+                toast.classList.remove('toast-visible');
+              }, 2200);
+            }
+          }, 120);
+        }, 250);
       }
     }
 
     function updateUILanguage(lang) {
-      const isGu = (lang === 'gu');
-      const isHi = (lang === 'hi');
-      
-      // Update Topbar Title
-      const topTitle = document.getElementById('topNavTitle');
-      if (topTitle) {
-        topTitle.innerHTML = isGu ? 'ઇન્ટરેક્ટિવ કુંડળી વર્કસ્પેસ (कुंडली वर्कस्पेस)' : (isHi ? 'इंटरैक्टिव कुंडली वर्कस्पेस (Kundli Workspace)' : 'Interactive Kundli Workspace');
-      }
+      try {
+        const isGu = (lang === 'gu');
+        const isHi = (lang === 'hi');
+        
+        // Topbar Title
+        const topTitle = document.getElementById('topNavTitle');
+        if (topTitle) {
+          topTitle.innerHTML = isGu ? 'ઇન્ટરેક્ટિવ કુંડળી વર્કસ્પેસ (कुंडली वर्कस्पेस)' : (isHi ? 'इंटरैक्टिव कुंडली वर्कस्पेस (Kundli Workspace)' : 'Interactive Kundli Workspace');
+        }
 
-      // Update Form Buttons
-      const btnCalc = document.getElementById('btnCalculateWorkspace');
-      if (btnCalc) {
-        btnCalc.innerHTML = isGu ? '✨ ગણતરી કરો અને કુંડળી જુઓ (कुंडली देखें)' : (isHi ? '✨ गणना करें व कुंडली देखें' : '✨ Calculate & Open Workspace');
-      }
-      const btnSave = document.getElementById('btnSaveCrm');
-      if (btnSave) {
-        btnSave.innerHTML = isGu ? '💾 માત્ર CRM માં સેવ કરો (सेव करें)' : (isHi ? '💾 केवल CRM में सेव करें' : '💾 Save to CRM Only');
-      }
-      const btnClear = document.getElementById('btnClearForm');
-      if (btnClear) {
-        btnClear.innerHTML = isGu ? '🔄 ફોર્મ સાફ કરો (साफ करें)' : (isHi ? '🔄 फॉर्म साफ करें' : '🔄 Clear Form');
-      }
+        // Form Action Buttons
+        const btnCalc = document.getElementById('btnCalculateWorkspace');
+        if (btnCalc) {
+          btnCalc.innerHTML = isGu ? '✨ ગણતરી કરો અને કુંડળી જુઓ (कुंडली देखें)' : (isHi ? '✨ गणना करें व कुंडली देखें' : '✨ Calculate & Open Workspace');
+        }
+        const btnSave = document.getElementById('btnSaveCrm');
+        if (btnSave) {
+          btnSave.innerHTML = isGu ? '💾 માત્ર CRM માં સેવ કરો (सेव करें)' : (isHi ? '💾 केवल CRM में सेव करें' : '💾 Save to CRM Only');
+        }
+        const btnClear = document.getElementById('btnClearForm');
+        if (btnClear) {
+          btnClear.innerHTML = isGu ? '🔄 ફોર્મ સાફ કરો (साफ करें)' : (isHi ? '🔄 फॉर्म साफ करें' : '🔄 Clear Form');
+        }
 
-      // Update Nav Titles in switchNav function context
-      const curNav = currentActiveNav || 'workspace';
-      switchNav(curNav);
+        // Safely re-trigger view title
+        const curNav = (typeof currentActiveNav !== 'undefined' && currentActiveNav) ? currentActiveNav : 'new_kundli';
+        if (typeof switchNav === 'function') {
+          switchNav(curNav);
+        }
+      } catch(e) {
+        console.warn('updateUILanguage non-fatal error:', e);
+      }
     }
 
     function renderPlanetsTable(planets) {
