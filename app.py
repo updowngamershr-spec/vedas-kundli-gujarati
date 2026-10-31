@@ -2135,38 +2135,38 @@ def index_ui():
 
         <nav class="sidebar-nav">
           <button class="nav-btn active" id="nav_dashboard" onclick="switchNav('dashboard')">
-            <span class="icon">📊</span> Dashboard
+            <span class="icon">📊</span> ડેશબોર્ડ (Dashboard)
           </button>
           <button class="nav-btn" id="nav_new_kundli" onclick="switchNav('new_kundli')">
-            <span class="icon">➕</span> New Kundli
+            <span class="icon">➕</span> નવી કુંડળી (New Kundli)
           </button>
           <button class="nav-btn" id="nav_clients" onclick="switchNav('clients')">
-            <span class="icon">👥</span> Clients (CRM)
+            <span class="icon">👥</span> ગ્રાહક CRM (Clients)
           </button>
           <button class="nav-btn" id="nav_workspace" onclick="switchNav('workspace')">
-            <span class="icon">🪐</span> Charts &amp; Space
+            <span class="icon">🪐</span> કુંડળી વર્કસ્પેસ (Charts)
           </button>
           <button class="nav-btn" id="nav_milan" onclick="switchNav('milan')">
-            <span class="icon">💍</span> Kundli Milan
+            <span class="icon">💍</span> કુંડળી મિલન (Kundli Milan)
           </button>
           <button class="nav-btn" id="nav_reports" onclick="switchNav('reports')">
-            <span class="icon">📄</span> PDF Report Studio
+            <span class="icon">📄</span> PDF રિપોર્ટ સ્ટુડિયો (Reports)
           </button>
           <button class="nav-btn" id="nav_prashna" onclick="switchNav('prashna')">
-            <span class="icon">⏱️</span> Prashna Kundli
+            <span class="icon">⏱️</span> પ્રશ્ન કુંડળી (Prashna Horary)
           </button>
           <button class="nav-btn" id="nav_settings" onclick="switchNav('settings')">
-            <span class="icon">⚙️</span> Settings &amp; Brand
+            <span class="icon">⚙️</span> સેટિંગ્સ અને બ્રાન્ડ (Settings)
           </button>
         </nav>
       </div>
 
       <div class="sidebar-footer">
         <div class="active-client-badge">
-          <div class="lbl">ACTIVE CLIENT</div>
-          <div class="val" id="sidebarActiveClientName">No Client Loaded</div>
+          <div class="lbl">સક્રિય જાતક (ACTIVE CLIENT)</div>
+          <div class="val" id="sidebarActiveClientName">કોઈ જાતક પસંદ નથી (No Client)</div>
         </div>
-        <div class="app-meta-tag">Standalone Desktop Edition • 100% Offline</div>
+        <div class="app-meta-tag">ડેસ્કટોપ પ્રોફેશનલ એડિશન • ૧૦૦% ઑફલાઇન</div>
       </div>
     </aside>
 
@@ -2196,8 +2196,8 @@ def index_ui():
             <button class="control-btn" id="lang_en" onclick="setLang('en')">English</button>
           </div>
 
-          <button class="btn-action-top" onclick="shareOnWhatsApp()" title="Share Horoscope via WhatsApp">💬 WhatsApp</button>
-          <button class="btn-lock" onclick="closeDesktopApp()" title="Cleanly close desktop suite">✖ Exit</button>
+          <button class="btn-action-top" onclick="shareOnWhatsApp()" title="Share Horoscope via WhatsApp">💬 વ્હોટ્સએપ (WhatsApp)</button>
+          <button class="btn-lock" onclick="closeDesktopApp()" title="Cleanly close desktop suite">✖ બહાર નીકળો (Exit)</button>
         </div>
       </header>
 
@@ -2217,28 +2217,28 @@ def index_ui():
           <div class="deity-cards-wrapper">
             <div style="background:#FFFFFF; border:1.5px solid #FDE68A; border-radius:10px; padding:10px; box-shadow:0 2px 8px rgba(212,175,55,0.08);">
               <img src="/assets/gods/ganesha.png" alt="Shree Ganesh" style="width:70px; height:70px; object-fit:cover; border-radius:50%; border:2px solid #D4AF37; margin:0 auto 6px auto; display:block; box-shadow:0 0 10px rgba(212,175,55,0.3);"/>
-              <strong style="color:#7C2D12; font-size:12px; display:block;">श्री गणेश</strong>
-              <span style="font-size:10.5px; color:#C2540A; font-weight:700;">विघ्नहर्ता सिद्धि-दाता</span>
+              <strong style="color:#7C2D12; font-size:12px; display:block;">શ્રી ગણેશ (श्री गणेश)</strong>
+              <span style="font-size:10.5px; color:#C2540A; font-weight:700;">વિઘ્નહર્તા સિદ્ધિ-દાતા (विघ्नहर्ता)</span>
             </div>
             <div style="background:#FFFFFF; border:1.5px solid #FDE68A; border-radius:10px; padding:10px; box-shadow:0 2px 8px rgba(212,175,55,0.08);">
               <img src="/assets/gods/shiva.png" alt="Lord Shiva" style="width:70px; height:70px; object-fit:cover; border-radius:50%; border:2px solid #D4AF37; margin:0 auto 6px auto; display:block; box-shadow:0 0 10px rgba(212,175,55,0.3);"/>
-              <strong style="color:#7C2D12; font-size:12px; display:block;">महादेव शिव</strong>
-              <span style="font-size:10.5px; color:#166534; font-weight:700;">महामृत्युंजय कवच</span>
+              <strong style="color:#7C2D12; font-size:12px; display:block;">મહાદેવ શિવ (महादेव शिव)</strong>
+              <span style="font-size:10.5px; color:#166534; font-weight:700;">મહામૃત્યુંજય રક્ષા કવચ (महामृत्युंजय)</span>
             </div>
             <div style="background:#FFFFFF; border:1.5px solid #FDE68A; border-radius:10px; padding:10px; box-shadow:0 2px 8px rgba(212,175,55,0.08);">
               <img src="/assets/gods/durga.png" alt="Maa Durga" style="width:70px; height:70px; object-fit:cover; border-radius:50%; border:2px solid #D4AF37; margin:0 auto 6px auto; display:block; box-shadow:0 0 10px rgba(212,175,55,0.3);"/>
-              <strong style="color:#7C2D12; font-size:12px; display:block;">माँ भगवती दुर्गा</strong>
-              <span style="font-size:10.5px; color:#991B1B; font-weight:700;">सर्व शक्ति व समृद्धि</span>
+              <strong style="color:#7C2D12; font-size:12px; display:block;">માઁ ભગવતી દુર્ગા (माँ दुर्गा)</strong>
+              <span style="font-size:10.5px; color:#991B1B; font-weight:700;">સર્વ શક્તિ અને સમૃદ્ધિ (सर्व शक्ति)</span>
             </div>
             <div style="background:#FFFFFF; border:1.5px solid #FDE68A; border-radius:10px; padding:10px; box-shadow:0 2px 8px rgba(212,175,55,0.08);">
               <img src="/assets/gods/surya.png" alt="Surya Dev" style="width:70px; height:70px; object-fit:cover; border-radius:50%; border:2px solid #D4AF37; margin:0 auto 6px auto; display:block; box-shadow:0 0 10px rgba(212,175,55,0.3);"/>
-              <strong style="color:#7C2D12; font-size:12px; display:block;">भगवान सूर्य</strong>
-              <span style="font-size:10.5px; color:#C2540A; font-weight:700;">नवग्रह अधिपति तेज</span>
+              <strong style="color:#7C2D12; font-size:12px; display:block;">ભગવાન સૂર્ય (सूर्य देव)</strong>
+              <span style="font-size:10.5px; color:#C2540A; font-weight:700;">નવગ્રહ અધિપતિ તેજ (नवग्रह अधिपति)</span>
             </div>
             <div style="background:#FFFFFF; border:1.5px solid #FDE68A; border-radius:10px; padding:10px; box-shadow:0 2px 8px rgba(212,175,55,0.08);">
               <img src="/assets/gods/hanuman.png" alt="Hanuman Ji" style="width:70px; height:70px; object-fit:cover; border-radius:50%; border:2px solid #D4AF37; margin:0 auto 6px auto; display:block; box-shadow:0 0 10px rgba(212,175,55,0.3);"/>
-              <strong style="color:#7C2D12; font-size:12px; display:block;">हनुमान जी</strong>
-              <span style="font-size:10.5px; color:#B45309; font-weight:700;">संकटमोचन रक्षा</span>
+              <strong style="color:#7C2D12; font-size:12px; display:block;">શ્રી હનુમાનજી (हनुमान जी)</strong>
+              <span style="font-size:10.5px; color:#B45309; font-weight:700;">સંકટમોચન મહાબલી (संकटमोचन रक्षा)</span>
             </div>
           </div>
         </div>
@@ -2249,35 +2249,35 @@ def index_ui():
               <div class="metric-icon-box">👥</div>
               <div class="metric-data">
                 <div class="val" id="dashTotalClients">0</div>
-                <div class="lbl">Registered Clients</div>
+                <div class="lbl">નોંધાયેલા ગ્રાહકો (पंजीकृत ग्राहक)</div>
               </div>
             </div>
             <div class="metric-card">
               <div class="metric-icon-box">📄</div>
               <div class="metric-data">
                 <div class="val" id="dashTotalReports">0</div>
-                <div class="lbl">PDF Dossiers Generated</div>
+                <div class="lbl">જનરેટ કરેલા PDF રિપોર્ટ્સ (निर्मित PDF)</div>
               </div>
             </div>
             <div class="metric-card">
               <div class="metric-icon-box">🪐</div>
               <div class="metric-data">
                 <div class="val" id="dashActiveClient">Ready</div>
-                <div class="lbl">Active Native in Workspace</div>
+                <div class="lbl">સક્રિય જાતક વર્કસ્પેસ (सक्रिय जातक)</div>
               </div>
             </div>
             <div class="metric-card">
               <div class="metric-icon-box">🛡️</div>
               <div class="metric-data">
                 <div class="val" style="color:#166534;">100% Offline</div>
-                <div class="lbl">VSOP87 &amp; Lahiri Engine</div>
+                <div class="lbl">૧૦૦% ઑફલાઇન એન્જિન (100% Offline)</div>
               </div>
             </div>
           </div>
 
           <!-- Quick Actions Bar -->
           <div class="quick-actions-bar">
-            <button class="btn-quick-act" onclick="switchNav('new_kundli')">➕ Create New Kundli</button>
+            <button class="btn-quick-act" onclick="switchNav('new_kundli')">➕ નવી કુંડળી બનાવો (नई कुंडली)</button>
             <button class="btn-quick-act" onclick="castInstantPrashna()">⏱️ Cast Instant Prashna</button>
             <button class="btn-quick-act" onclick="switchNav('milan')">💍 Kundli Milan (36-Guna)</button>
             <button class="btn-quick-act" onclick="switchNav('reports')">👑 60-Page VIP PDF Studio</button>
@@ -2287,14 +2287,14 @@ def index_ui():
           <!-- Recent Clients Card -->
           <div class="glass-card">
             <div class="card-header">
-              <span>👥 Recent Client Consultations</span>
+              <span>👥 તાજેતરના ગ્રાહક પરામર્શ (हाल के जातक परामर्श)</span>
               <button class="btn-table-action" onclick="switchNav('new_kundli')">+ Add Client</button>
             </div>
             <div style="overflow-x:auto;">
               <table class="crm-table">
                 <thead>
                   <tr>
-                    <th>Client Name</th><th>Gender</th><th>Date of Birth</th><th>Birth Time</th><th>Place</th><th>Category</th><th>Actions</th>
+                    <th>ગ્રાહકનું નામ (Client Name / ग्राहक)</th><th>લિંગ (Gender)</th><th>જન્મ તારીખ (DOB / जन्म)</th><th>સમય (TOB / समय)</th><th>સ્થળ (Place / स्थान)</th><th>શ્રેણી (Category)</th><th>ક્રિયાઓ (Actions / कार्य)</th>
                   </tr>
                 </thead>
                 <tbody id="dashRecentClientsBody">
@@ -2307,14 +2307,14 @@ def index_ui():
           <!-- Recent PDF Reports Card -->
           <div class="glass-card">
             <div class="card-header">
-              <span>📄 Generated PDF Dossiers Archive (reports/)</span>
+              <span>📄 જનરેટ કરેલા PDF રિપોર્ટ્સ સંગ્રહ (PDF रिपोर्ट संग्रह)</span>
               <button class="btn-table-action" onclick="switchNav('reports')">Open PDF Studio</button>
             </div>
             <div style="overflow-x:auto;">
               <table class="crm-table">
                 <thead>
                   <tr>
-                    <th>Report Dossier Filename</th><th>Size</th><th>Generated Date</th><th>Action</th>
+                    <th>રિપોર્ટ ફાઇલ નામ (File Name / फाइल)</th><th>કદ (Size)</th><th>જનરેટ તારીખ (Date / दिनांक)</th><th>ક્રિયા (Action / कार्य)</th>
                   </tr>
                 </thead>
                 <tbody id="dashRecentReportsBody">
@@ -2329,7 +2329,7 @@ def index_ui():
                 <div style="background:linear-gradient(135deg, #7C2D12 0%, #B45309 100%); padding:12px 18px; color:#fff; display:flex; justify-content:space-between; align-items:center;">
                   <span style="font-weight:900; font-size:14px; letter-spacing:0.5px;">👑 Royal Vedic Matrimonial Milan Dossier (३-पृष्ठीय अष्टकूट मिलान)</span>
                   <div style="display:flex; gap:10px;">
-                    <button onclick="printMilanDossier()" style="background:#059669; color:#fff; border:none; padding:7px 16px; border-radius:6px; font-weight:800; cursor:pointer; font-size:12px;">🖨️ Direct Print / Save as PDF</button>
+                    <button onclick="printMilanDossier()" style="background:#059669; color:#fff; border:none; padding:7px 16px; border-radius:6px; font-weight:800; cursor:pointer; font-size:12px;">🖨️ પ્રિન્ટ / PDF સેવ (Print / Save)</button>
                     <button onclick="exportMilanPDF()" style="background:#D97706; color:#fff; border:none; padding:7px 16px; border-radius:6px; font-weight:800; cursor:pointer; font-size:12px;">⬇️ Download PDF</button>
                     <button onclick="closeMilanPreview()" style="background:#EF4444; color:#fff; border:none; padding:7px 14px; border-radius:6px; font-weight:800; cursor:pointer; font-size:12px;">✕ Close</button>
                   </div>
@@ -2348,30 +2348,30 @@ def index_ui():
         <section class="view-pane" id="pane_new_kundli">
           <div class="glass-card" style="max-width: 900px; margin: 0 auto;">
             <div class="card-header">
-              <span>🌟 Native Birth Parameters &amp; Kundli Creation (जन्म विवरण)</span>
+              <span>🌟 જાતક જન્મ વિગતો અને કુંડળી નિર્માણ (जन्म विवरण व कुंडली निर्माण)</span>
               <span class="badge">Dynamic Math • No Defaults</span>
             </div>
             <p style="font-size:12px; color:#574032; margin-bottom:16px;">
-              Enter native birth details below. You can search across 700,000+ Indian &amp; international cities for instant coordinate auto-fill.
+              નીચે જાતકની ચોક્કસ જન્મ વિગતો દાખલ કરો. તમે ૭,૦૦,૦૦૦+ ભારતીય અને વૈશ્વિક શહેરોમાંથી શહેર શોધીને અક્ષાંશ-રેખાંશ આપોઆપ ભરી શકો છો.
             </p>
 
             <input type="hidden" id="clientId" value=""/>
 
             <div class="form-grid">
               <div class="form-group" style="grid-column: span 2;">
-                <label>Client Full Name (जातक का नाम) *</label>
+                <label>જાતકનું સંપૂર્ણ નામ (Client Full Name / जातक का नाम) *</label>
                 <input type="text" id="name" value="Harmanjot Singh" placeholder="e.g. Aarav Sharma" required/>
               </div>
               <div class="form-group">
-                <label>Gender (लिंग)</label>
+                <label>લિંગ (Gender / लिंग)</label>
                 <select id="sex">
-                  <option value="Male">Male (पुरुष)</option>
-                  <option value="Female">Female (स्त्री)</option>
-                  <option value="Other">Other</option>
+                  <option value="Male">પુરુષ (Male / पुरुष)</option>
+                  <option value="Female">સ્ત્રી (Female / स्त्री)</option>
+                  <option value="Other">અન્ય (Other)</option>
                 </select>
               </div>
               <div class="form-group">
-                <label>Varshaphal Year</label>
+                <label>વર્ષફળ વર્ષ (Varshaphal Year / वर्ष)</label>
                 <input type="number" id="varsha_year" value="2026"/>
               </div>
             </div>
@@ -2379,27 +2379,27 @@ def index_ui():
             <!-- Date & Time Grid -->
             <div class="form-grid" style="grid-template-columns: repeat(6, 1fr);">
               <div class="form-group">
-                <label>Day (दिन) *</label>
+                <label>દિવસ (Day / दिन) *</label>
                 <input type="number" id="day" min="1" max="31" value="3" placeholder="DD" required/>
               </div>
               <div class="form-group">
-                <label>Month (माह) *</label>
+                <label>મહિનો (Month / माह) *</label>
                 <input type="number" id="month" min="1" max="12" value="10" placeholder="MM" required/>
               </div>
               <div class="form-group">
-                <label>Year (वर्ष) *</label>
+                <label>વર્ષ (Year / वर्ष) *</label>
                 <input type="number" id="year" min="1800" max="2100" value="2005" placeholder="YYYY" required/>
               </div>
               <div class="form-group">
-                <label>Hour (0-23) *</label>
+                <label>કલાક (Hour 0-23 / घंटा) *</label>
                 <input type="number" id="hour" min="0" max="23" value="10" placeholder="HH" required/>
               </div>
               <div class="form-group">
-                <label>Minute (0-59) *</label>
+                <label>મિનિટ (Minute 0-59 / मिनट) *</label>
                 <input type="number" id="minute" min="0" max="59" value="2" placeholder="MM" required/>
               </div>
               <div class="form-group">
-                <label>Second (0-59)</label>
+                <label>સેકન્ડ (Second 0-59 / सेकंड)</label>
                 <input type="number" id="second" min="0" max="59" value="6"/>
               </div>
             </div>
@@ -2407,51 +2407,51 @@ def index_ui():
             <!-- Searchable City Grid -->
             <div class="form-grid" style="grid-template-columns: 2fr 1fr 1fr 1fr;">
               <div class="form-group city-wrap">
-                <label>Search City (शहर खोजें - 700,000+ Database)</label>
+                <label>શહેર શોધો (Search City / शहर खोजें - ૭+ લાખ ડેટાબેઝ)</label>
                 <input type="text" id="citySearchInput" placeholder="Type city e.g. Delhi, Jaipur, London..." oninput="onCitySearchType()" autocomplete="off"/>
                 <div class="city-dropdown" id="citySuggestions"></div>
               </div>
               <div class="form-group">
-                <label>Selected Place *</label>
+                <label>પસંદ કરેલું સ્થળ (Selected Place / स्थान) *</label>
                 <input type="text" id="place" placeholder="City / Town" value="Ludhiana"/>
               </div>
               <div class="form-group">
-                <label>Latitude (°N)</label>
+                <label>અક્ષાંશ (Latitude °N / अक्षांश)</label>
                 <input type="number" id="lat" step="0.0001" value="30.9120"/>
               </div>
               <div class="form-group">
-                <label>Longitude (°E)</label>
+                <label>રેખાંશ (Longitude °E / देशांतर)</label>
                 <input type="number" id="lon" step="0.0001" value="75.8538"/>
               </div>
             </div>
 
             <div class="form-grid" style="grid-template-columns: 1fr 1.5fr 1.5fr 2fr;">
               <div class="form-group">
-                <label>Timezone (UTC)</label>
+                <label>સમય ઝોન (Timezone UTC / समय क्षेत्र)</label>
                 <input type="number" id="tz" step="0.25" value="5.5"/>
               </div>
               <div class="form-group">
-                <label>Phone / WhatsApp</label>
+                <label>ફોન / વ્હોટ્સએપ (Phone / WhatsApp)</label>
                 <input type="text" id="phone" placeholder="e.g. 9876543210"/>
               </div>
               <div class="form-group">
-                <label>Email Address</label>
+                <label>ઇમેઇલ સરનામું (Email Address)</label>
                 <input type="email" id="email" placeholder="client@example.com"/>
               </div>
               <div class="form-group">
-                <label>Consultation Category</label>
+                <label>કન્સલ્ટેશન કેટેગરી (Consultation Category / परामर्श श्रेणी)</label>
                 <select id="category">
-                  <option value="General Consultation">General Consultation (सामान्य परामर्श)</option>
-                  <option value="Career & Business">Career &amp; Business (करियर व व्यवसाय)</option>
-                  <option value="Marriage & Compatibility">Marriage &amp; Match (विवाह विचार)</option>
-                  <option value="Health & Longevity">Health &amp; Medical (स्वास्थ्य विचार)</option>
-                  <option value="Wealth & Property">Wealth &amp; Property (धन व संपत्ति)</option>
+                  <option value="General Consultation">સામાન્ય જ્યોતિષ પરામર્શ (General Consultation)</option>
+                  <option value="Career & Business">કારકિર્દી અને વ્યવસાય (Career &amp; Business)</option>
+                  <option value="Marriage & Compatibility">વિવાહ અને કુંડળી મિલન (Marriage &amp; Match)</option>
+                  <option value="Health & Longevity">સ્વાસ્થ્ય અને આયુષ્ય (Health &amp; Medical)</option>
+                  <option value="Wealth & Property">ધન, સંપત્તિ અને સમૃદ્ધિ (Wealth &amp; Property)</option>
                 </select>
               </div>
             </div>
 
             <div class="form-group" style="margin-bottom: 20px;">
-              <label>Astrological Consultation Notes</label>
+              <label>જ્યોતિષીય નોંધ / વિશેષ પ્રશ્નો (Astrological Consultation Notes)</label>
               <textarea id="notes" placeholder="Enter special client queries, birth verification notes, remedial focus..."></textarea>
             </div>
 
@@ -2475,21 +2475,21 @@ def index_ui():
         <section class="view-pane" id="pane_clients">
           <div class="glass-card">
             <div class="card-header">
-              <span>👥 Client Consultations Directory (Offline CRM)</span>
+              <span>👥 ગ્રાહક કન્સલ્ટેશન ડાયરેક્ટરી અને રેકોર્ડ્સ (ग्राहक डायरेक्टरी / CRM)</span>
               <button class="btn-primary-gradient" style="padding:6px 14px; font-size:12px;" onclick="switchNav('new_kundli')">
-                ➕ Add New Client
+                ➕ નવો ગ્રાહક ઉમેરો (नया क्लाइंट जोड़ें)
               </button>
             </div>
 
             <div style="margin-bottom: 14px; display:flex; gap:12px;">
-              <input type="text" id="clientsSearchInput" placeholder="🔍 Search clients by name, city, phone, category..." style="flex:1; height:38px; border:1.5px solid #EADBC8; border-radius:8px; padding:0 12px; font-size:12.5px; font-weight:600;" oninput="loadClientsTable()"/>
+              <input type="text" id="clientsSearchInput" placeholder="🔍 ગ્રાહક શોધો (નામ, શહેર, ફોન, કેટેગરી... / ग्राहक खोजें)" style="flex:1; height:38px; border:1.5px solid #EADBC8; border-radius:8px; padding:0 12px; font-size:12.5px; font-weight:600;" oninput="loadClientsTable()"/>
             </div>
 
             <div style="overflow-x:auto;">
               <table class="crm-table">
                 <thead>
                   <tr>
-                    <th>ID</th><th>Client Name</th><th>Gender</th><th>Birth Date &amp; Time</th><th>Birth Place</th><th>Phone</th><th>Category</th><th>Created</th><th>Actions</th>
+                    <th>આઈડી (ID)</th><th>ગ્રાહકનું નામ (Client Name / ग्राहक)</th><th>લિંગ (Gender)</th><th>જન્મ તારીખ અને સમય (DOB &amp; TOB)</th><th>જન્મ સ્થળ (Place / स्थान)</th><th>ફોન (Phone)</th><th>કેટેગરી (Category)</th><th>નોંધણી તારીખ (Created)</th><th>ક્રિયાઓ (Actions / कार्य)</th>
                   </tr>
                 </thead>
                 <tbody id="clientsFullTableBody">
@@ -2519,10 +2519,10 @@ def index_ui():
             </div>
             <div style="display:flex; gap:8px; flex-wrap:wrap; width:100%; max-width:340px;">
               <button type="button" onclick="exportPDF()" style="flex:1; min-width:145px; background:linear-gradient(135deg, #7C2D12 0%, #451A03 100%); color:#FEF08A; border:1px solid #D4AF37; font-weight:900; font-size:12.5px; padding:10px 14px; border-radius:8px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:6px; box-shadow:0 2px 8px rgba(124,45,18,0.25);">
-                📄 View Complete PDF
+                📄 સંપૂર્ણ ૫૬-પેજ PDF જુઓ (PDF देखें)
               </button>
               <button type="button" onclick="loadInAppPdfPreview(); switchNav('reports');" style="flex:1; min-width:130px; background:#FFFFFF; color:#7C2D12; border:1.5px solid #D4AF37; font-weight:800; font-size:12px; padding:10px 12px; border-radius:8px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:6px;">
-                👁️ Live Preview
+                👁️ લાઇવ પ્રિવ્યુ (Live Preview)
               </button>
             </div>
           </div>
@@ -2530,23 +2530,23 @@ def index_ui():
           <!-- Active Client Stats Strip -->
           <div class="workspace-stats-strip">
             <div class="stat-pill-card">
-              <div class="lbl">Lagna (लग्न)</div>
+              <div class="lbl">લગ્ન (Lagna / लग्न)</div>
               <div class="val" id="statLagna">-</div>
             </div>
             <div class="stat-pill-card">
-              <div class="lbl">Moon Rashi (चन्द्र राशि)</div>
+              <div class="lbl">ચંદ્ર રાશિ (Moon Sign / राशि)</div>
               <div class="val" id="statRasi">-</div>
             </div>
             <div class="stat-pill-card">
-              <div class="lbl">Nakshatra (नक्षत्र)</div>
+              <div class="lbl">નક્ષત્ર (Nakshatra / नक्षत्र)</div>
               <div class="val" id="statNakshatra">-</div>
             </div>
             <div class="stat-pill-card">
-              <div class="lbl">Manglik (मांगलिक)</div>
+              <div class="lbl">માંગલિક દોષ (Manglik / मांगलिक)</div>
               <div class="val" id="statManglik">-</div>
             </div>
             <div class="stat-pill-card">
-              <div class="lbl">Dasha Balance</div>
+              <div class="lbl">દશા શેષ (Dasha Balance / दशा शेष)</div>
               <div class="val" id="statDasha">-</div>
             </div>
           </div>
@@ -2564,7 +2564,7 @@ def index_ui():
               <div class="time-readout-box" id="workspaceTimeDisplay">12:00:00</div>
               <button class="btn-time-step" onclick="adjustBirthTime(1)" title="Step forward 1 minute">+1 min</button>
               <button class="btn-time-step" onclick="adjustBirthTime(5)" title="Step forward 5 minutes">+5 min</button>
-              <button class="btn-time-recalc" onclick="calculateKundli()" title="Recalculate complete charts and tables">🔄 Recalculate Now</button>
+              <button class="btn-time-recalc" onclick="calculateKundli()" title="Recalculate complete charts and tables">🔄 પુનઃ ગણતરી કરો (Recalculate Now)</button>
             </div>
           </div>
 
@@ -2577,11 +2577,11 @@ def index_ui():
           <!-- Quick Jump Navigation Strip -->
           <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; background:#FAF6F0; border:1px solid #EADBC8; border-radius:8px; padding:6px 10px;">
             <button type="button" class="btn-time-step" style="padding:4px 10px; font-size:11.5px; font-weight:700;" onclick="document.querySelector('.charts-grid').scrollIntoView({behavior:'smooth'})">🪐 Charts &amp; Vargas</button>
-            <button type="button" class="btn-time-step" style="padding:4px 10px; font-size:11.5px; font-weight:700;" onclick="document.getElementById('sec_shadbala_sav').scrollIntoView({behavior:'smooth'})">⚖️ Shadbala &amp; SAV</button>
+            <button type="button" class="btn-time-step" style="padding:4px 10px; font-size:11.5px; font-weight:700;" onclick="document.getElementById('sec_shadbala_sav').scrollIntoView({behavior:'smooth'})">⚖️ ષડ્બળ અને SAV (Shadbala)</button>
             <button type="button" class="btn-time-step" style="padding:4px 10px; font-size:11.5px; background:#FEF3C7; color:#78350F; font-weight:800; border-color:#FDE68A;" onclick="document.getElementById('sec_kp_system').scrollIntoView({behavior:'smooth'})">🏛️ KP System &amp; Cusps</button>
             <button type="button" class="btn-time-step" style="padding:4px 10px; font-size:11.5px; background:#FEE2E2; color:#991B1B; font-weight:800; border-color:#FCA5A5;" onclick="document.getElementById('sec_lal_kitab').scrollIntoView({behavior:'smooth'})">📖 Lal Kitab &amp; Upay</button>
             <button type="button" class="btn-time-step" style="padding:4px 10px; font-size:11.5px; background:#DCFCE7; color:#166534; font-weight:800; border-color:#86EFAC;" onclick="document.getElementById('sec_ratna_yantra').scrollIntoView({behavior:'smooth'})">💎 રત્ન અને સિદ્ધ યંત્ર (रत्न व यंत्र)</button>
-            <button type="button" class="btn-time-step" style="padding:4px 10px; font-size:11.5px; background:#E0E7FF; color:#3730A3; font-weight:800; border-color:#C7D2FE;" onclick="document.getElementById('sec_avkahada_science').scrollIntoView({behavior:'smooth'})">🔬 Avakahada &amp; Science</button>
+            <button type="button" class="btn-time-step" style="padding:4px 10px; font-size:11.5px; background:#E0E7FF; color:#3730A3; font-weight:800; border-color:#C7D2FE;" onclick="document.getElementById('sec_avkahada_science').scrollIntoView({behavior:'smooth'})">🔬 અવકહડા અને વિજ્ઞાન (Avakahada &amp; Science)</button>
           </div>
 
           <!-- Side-by-Side Charts (D1 & Divisional Chart Viewer) -->
@@ -2589,7 +2589,7 @@ def index_ui():
             <!-- Left Chart: D1 Lagna -->
             <div class="chart-box">
               <div class="chart-box-header">
-                <strong id="chartTitle">D1 Lagna Chart (लग्न कुंडली)</strong>
+                <strong id="chartTitle">D1 લગ્ન કુંડળી (D1 Lagna Chart / लग्न कुंडली)</strong>
                 <div class="control-pill">
                   <button class="control-btn active" onclick="setChartStyle('north')">उत्तर</button>
                   <button class="control-btn" onclick="setChartStyle('south')">दक्षिण</button>
@@ -2603,24 +2603,24 @@ def index_ui():
             <div class="chart-box">
               <div class="chart-box-header">
                 <div style="display:flex; align-items:center; gap:8px;">
-                  <strong>Divisional Chart:</strong>
+                  <strong>૧૬-વર્ગ કુંડળી (Divisional Chart):</strong>
                   <select id="divisionalSelect" class="divisional-select" onchange="onDivisionalChange()">
-                    <option value="D9" selected>D9 Navamsha (Dharma, Spouse &amp; Soul)</option>
-                    <option value="D10">D10 Dashamsha (Career &amp; Status)</option>
-                    <option value="D2">D2 Hora (Wealth &amp; Treasury)</option>
-                    <option value="D3">D3 Drekkana (Siblings &amp; Courage)</option>
-                    <option value="D4">D4 Chaturthamsha (Fortune &amp; Property)</option>
-                    <option value="D7">D7 Saptamsha (Children &amp; Progeny)</option>
-                    <option value="D12">D12 Dwadashamsha (Parents &amp; Lineage)</option>
-                    <option value="D16">D16 Shodashamsha (Vehicles &amp; Joy)</option>
-                    <option value="D20">D20 Vimshamsha (Spiritual Progress)</option>
-                    <option value="D24">D24 Chaturvimshamsha (Higher Learning)</option>
-                    <option value="D27">D27 Saptavimshamsha (Strengths)</option>
-                    <option value="D30">D30 Trimshamsha (Misfortunes &amp; Arishta)</option>
-                    <option value="D40">D40 Khavedamsha (Auspicious Effects)</option>
-                    <option value="D45">D45 Akshavedamsha (General Well-being)</option>
-                    <option value="D60">D60 Shashtiamsha (Past Life Karma)</option>
-                    <option value="TRANSIT">Transit Chart (Today's Gochar)</option>
+                    <option value="D9" selected>D9 નવાંશ (ધર્મ, જીવનસાથી અને આત્મા / नवमांश)</option>
+                    <option value="D10">D10 દશાંશ (કારકિર્દી અને પદ-પ્રતિષ્ઠા / दशमांश)</option>
+                    <option value="D2">D2 હોરા (ધન અને કોષ / होरा संपदा)</option>
+                    <option value="D3">D3 દ્રેષ્કાણ (ભાઈ-ભાંડુ અને પરાક્રમ / द्रेष्काण)</option>
+                    <option value="D4">D4 ચતુર્થાંશ (ભાગ્ય અને સંપત્તિ / चतुर्थांश)</option>
+                    <option value="D7">D7 સપ્તાંશ (સંતાન અને વંશ / सप्तांश)</option>
+                    <option value="D12">D12 દ્વાદશાંશ (માતા-પિતા અને પૂર્વજો / द्वादशांश)</option>
+                    <option value="D16">D16 ષોડશાંશ (વાહન અને સુખ / षोडशांश)</option>
+                    <option value="D20">D20 વિંશાંશ (અધ્યાત્મ અને ઉપાસના / विंशांश)</option>
+                    <option value="D24">D24 ચતુર્વિંશાંશ (વિદ્યા અને જ્ઞાન / चतुर्विंशांश)</option>
+                    <option value="D27">D27 સપ્તવિંશાંશ (શારીરિક બળ અને સામર્થ્ય / सप्तविंशांश)</option>
+                    <option value="D30">D30 ત્રિંશાંશ (અનિષ્ટ અને અરિષ્ટ નિવારણ / त्रिंशांश)</option>
+                    <option value="D40">D40 ખવેદાંશ (શુભ ફળ અને પરિણામ / खवेदांश)</option>
+                    <option value="D45">D45 અક્ષવેદાંશ (સમગ્ર કલ્યાણ / अक्षवेदांश)</option>
+                    <option value="D60">D60 ષષ્ટ્યાંશ (પૂર્વ જન્મ સંચિત કર્મ / षष्ट्यंश)</option>
+                    <option value="TRANSIT">આજનો ગોચર (Real-Time Transit / आज का गोचर)</option>
                   </select>
                 </div>
                 <span style="font-size:10.5px; color:#7C2D12; font-weight:700;" id="divisionalSubTag">Harmonic Arc</span>
@@ -2862,17 +2862,17 @@ def index_ui():
         <section class="view-pane" id="pane_milan">
           <div class="glass-card">
             <div class="card-header">
-              <span>💍 Kundli Milan - 36 Guna Ashtakoot Matchmaking &amp; Manglik Harmony</span>
-              <button class="btn-primary-gradient" style="padding:5px 12px; font-size:11.5px;" onclick="calculateMilan()">⚡ Calculate Milan</button>
+              <span>💍 અષ્ટકૂટ ૩૬ ગુણ કુંડળી મિલન અને માંગલિક સામંજસ્ય (विवाह मिलान)</span>
+              <button class="btn-primary-gradient" style="padding:5px 12px; font-size:11.5px;" onclick="calculateMilan()">⚡ અષ્ટકૂટ ૩૬ ગુણ મિલન ગણતરી કરો (मिलान करें)</button>
             </div>
 
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:16px;">
               <!-- Groom Box -->
               <div style="background:#FFFDF9; border:1.5px solid #EADBC8; border-radius:10px; padding:14px;">
-                <h4 style="color:#7C2D12; font-size:13px; font-weight:800; margin-bottom:10px;">👦 वर विवरण (Groom Details)</h4>
+                <h4 style="color:#7C2D12; font-size:13px; font-weight:800; margin-bottom:10px;">👦 વર વિગત (Groom Details / वर विवरण)</h4>
                 <div class="form-grid">
                   <div class="form-group" style="grid-column: span 2;">
-                    <label>Groom Name</label>
+                    <label>વરનું નામ (Groom Name / वर का नाम)</label>
                     <input type="text" id="milan_b_name" value="Groom"/>
                   </div>
                   <div class="form-group"><label>Day</label><input type="number" id="milan_b_day" value="15"/></div>
@@ -2881,7 +2881,7 @@ def index_ui():
                   <div class="form-group"><label>Hour</label><input type="number" id="milan_b_hour" value="10"/></div>
                   <div class="form-group"><label>Minute</label><input type="number" id="milan_b_minute" value="30"/></div>
                   <div class="form-group city-wrap" style="grid-column: span 2; position:relative;">
-                    <label>🏙️ Groom Birth Place / City (वर जन्म स्थान खोजें)</label>
+                    <label>🏙️ વરનું જન્મ સ્થળ / શહેર શોધો (Groom POB / वर जन्म स्थान)</label>
                     <input type="text" id="milan_b_place" value="Delhi" placeholder="Type city e.g. Ludhiana, Delhi, Mumbai..." oninput="onMilanCitySearch('b')" autocomplete="off"/>
                     <div class="city-dropdown" id="milan_b_suggestions"></div>
                   </div>
@@ -2890,10 +2890,10 @@ def index_ui():
 
               <!-- Bride Box -->
               <div style="background:#FFFDF9; border:1.5px solid #EADBC8; border-radius:10px; padding:14px;">
-                <h4 style="color:#7C2D12; font-size:13px; font-weight:800; margin-bottom:10px;">👧 कन्या विवरण (Bride Details)</h4>
+                <h4 style="color:#7C2D12; font-size:13px; font-weight:800; margin-bottom:10px;">👧 કન્યા વિગત (Bride Details / कन्या विवरण)</h4>
                 <div class="form-grid">
                   <div class="form-group" style="grid-column: span 2;">
-                    <label>Bride Name</label>
+                    <label>કન્યાનું નામ (Bride Name / कन्या का नाम)</label>
                     <input type="text" id="milan_g_name" value="Bride"/>
                   </div>
                   <div class="form-group"><label>Day</label><input type="number" id="milan_g_day" value="22"/></div>
@@ -2902,7 +2902,7 @@ def index_ui():
                   <div class="form-group"><label>Hour</label><input type="number" id="milan_g_hour" value="14"/></div>
                   <div class="form-group"><label>Minute</label><input type="number" id="milan_g_minute" value="15"/></div>
                   <div class="form-group city-wrap" style="grid-column: span 2; position:relative;">
-                    <label>🏙️ Bride Birth Place / City (कन्या जन्म स्थान खोजें)</label>
+                    <label>🏙️ કન્યાનું જન્મ સ્થળ / શહેર શોધો (Bride POB / कन्या जन्म स्थान)</label>
                     <input type="text" id="milan_g_place" value="Delhi" placeholder="Type city e.g. Ludhiana, Delhi, Mumbai..." oninput="onMilanCitySearch('g')" autocomplete="off"/>
                     <div class="city-dropdown" id="milan_g_suggestions"></div>
                   </div>
@@ -2918,7 +2918,7 @@ def index_ui():
                 <div style="font-size:12px; font-weight:700; color:#B45309; margin-top:4px;" id="milanManglikHarmony">Manglik Harmony Verified</div>
                 <div style="display:flex; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap;">
                   <button class="btn-primary-gradient" id="btnExportMilan" onclick="exportMilanPDF()">⬇️ Download 3-Page Royal Milan PDF</button>
-                  <button class="btn-primary-gradient" style="background:linear-gradient(135deg, #059669 0%, #047857 100%);" onclick="printMilanDossier()">🖨️ Direct Print / Save as PDF (Instant)</button>
+                  <button class="btn-primary-gradient" style="background:linear-gradient(135deg, #059669 0%, #047857 100%);" onclick="printMilanDossier()">🖨️ પ્રિન્ટ / PDF સેવ (Print / Save) (Instant)</button>
                   <button class="btn-secondary-outline" style="border-color:#B45309; color:#78350F; font-weight:800; background:#FFFBEB;" onclick="previewMilanDossier()">👁️ Live Dossier Preview</button>
                 </div>
               </div>
@@ -2951,13 +2951,13 @@ def index_ui():
                   ⬇️ Download PDF
                 </button>
                 <button class="btn-primary-gradient" style="background:linear-gradient(135deg, #059669 0%, #047857 100%); padding:8px 12px; font-size:12px; font-weight:800; display:inline-flex; align-items:center; gap:4px;" onclick="printReportFrame()">
-                  🖨️ Direct Print / Save
+                  🖨️ પ્રિન્ટ / PDF સેવ (Print / Save)
                 </button>
                 <button class="btn-secondary-outline" onclick="openReportInNewTab()" style="padding:8px 10px; font-size:11.5px; font-weight:700; display:inline-flex; align-items:center; gap:4px;">
-                  📱 Fullscreen Tab
+                  📱 નવી ટેબમાં જુઓ (Fullscreen Tab)
                 </button>
                 <button class="btn-secondary-outline" onclick="loadInAppPdfPreview()" style="padding:8px 10px; font-size:11.5px; font-weight:700;">
-                  🔄 Refresh
+                  🔄 રિફ્રેશ પ્રિવ્યુ (Refresh)
                 </button>
               </div>
             </div>
@@ -2970,16 +2970,16 @@ def index_ui():
             <!-- Collapsible Dossier & Chapter Settings -->
             <details style="background:#FFFDF9; border:1.5px solid #EADBC8; border-radius:10px; padding:12px 14px; margin-top:8px;">
               <summary style="font-size:12.5px; font-weight:800; color:#7C2D12; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">
-                <span>⚙️ Dossier Package &amp; Chapters Checklist</span>
+                <span>⚙️ કુંડળી પેકેજ અને પ્રકરણોની યાદી (अध्यायों की सूची)</span>
                 <span style="font-size:11px; color:#A8A29E;">▼ Click to expand options</span>
               </summary>
               <div style="margin-top:12px;">
                 <h4 style="font-size:12.5px; font-weight:800; color:#7C2D12; margin-bottom:8px;">Select Dossier Package</h4>
                 <div class="form-group" style="margin-bottom:12px;">
                   <select id="reportPackageSelect" style="width:100%; height:40px; font-size:12.5px; font-weight:700; color:#7C2D12;" onchange="loadInAppPdfPreview()">
-                    <option value="maha">👑 60-Page Master VIP Kundli (Comprehensive Book)</option>
-                    <option value="laghu">📜 4-Page Laghu Kundli (Fast 1-Page Summary)</option>
-                    <option value="varshaphal">🪐 10-Page Varshaphal &amp; Lal Kitab Annual Forecast</option>
+                    <option value="maha">👑 સંપૂર્ણ ૫૬-પેજ વૈદિક મહા-કુંડળી ડોઝિયર (56-Page VIP Dossier)</option>
+                    <option value="laghu">📜 ૪-પેજ લઘુ કુંડળી સારાંશ (4-Page Summary)</option>
+                    <option value="varshaphal">🪐 ૧૦-પેજ વાર્ષિક વર્ષફળ અને લાલ કિતાબ (10-Page Varshaphal)</option>
                   </select>
                 </div>
 
@@ -3013,14 +3013,14 @@ def index_ui():
         <section class="view-pane" id="pane_prashna">
           <div class="glass-card">
             <div class="card-header">
-              <span>⏱️ Instant Horary Prashna Kundli (प्रश्न कुण्डली)</span>
-              <button class="btn-primary-gradient" onclick="castInstantPrashna()">🔄 Cast for Current Moment</button>
+              <span>⏱️ તાત્કાલિક પ્રશ્ન કુંડળી (तत्काल प्रश्न कुंडली - Prashna Horary)</span>
+              <button class="btn-primary-gradient" onclick="castInstantPrashna()">🔄 વર્તમાન મુહૂર્ત પ્રશ્ન કુંડળી જુઓ (तत्काल प्रश्न कुंडली)</button>
             </div>
             <p style="font-size:12px; color:#574032; margin-bottom:14px;">
-              Casts an immediate planetary chart for the exact current second and location to resolve queries in horary astrology.
+              જાતકના પ્રશ્ન પૂછવાના વાસ્તવિક સમયે તાત્કાલિક ગ્રહ ગોચર અને નક્ષત્ર ગણતરી દ્વારા ચોક્કસ માર્ગદર્શન (Horary Astrology).
             </p>
             <div id="prashnaContainer" style="text-align:center; padding:20px;">
-              <p style="color:#6B7280; font-style:italic;">Click 'Cast for Current Moment' to cast instantaneous Prashna chart.</p>
+              <p style="color:#6B7280; font-style:italic;">તાત્કાલિક પ્રશ્ન કુંડળી ગણતરી કરવા માટે ઉપર 'વર્તમાન મુહૂર્ત પ્રશ્ન કુંડળી જુઓ' બટન પર ક્લિક કરો.</p>
             </div>
           </div>
         </section>
@@ -3032,7 +3032,7 @@ def index_ui():
         <!-- DEMO LICENSE KEYS MANAGER CARD -->
         <div class="glass-card" style="max-width:760px; margin: 0 auto 16px auto;">
           <div class="card-header" style="background:linear-gradient(90deg, #7C2D12 0%, #B45309 100%); color:#fff; display:flex; justify-content:space-between; align-items:center;">
-            <span>🔑 Customer Demo License Manager (ग्राहक डेमो चाबी नियंत्रण)</span>
+            <span>🔑 ગ્રાહક ડેમો લાયસન્સ નિયંત્રણ (ग्राहक डेमो चाबी नियंत्रण)</span>
             <span class="badge" style="background:#059669; color:#fff;">100% Free Control</span>
           </div>
           <div style="padding:16px; background:#FFFDF9;">
@@ -3055,7 +3055,7 @@ def index_ui():
                 </select>
               </div>
               <button class="btn-primary-gradient" type="button" onclick="generateDemoKey()" style="height:36px; font-size:12px; padding:0 18px;">
-                ✨ Generate Demo Key
+                ✨ નવી ડેમો ચાવી બનાવો (Generate Key)
               </button>
             </div>
 
@@ -3064,11 +3064,11 @@ def index_ui():
               <table class="dash-table">
                 <thead>
                   <tr>
-                    <th>ग्राहक (Customer)</th>
-                    <th>डेमो चाबी (Key Code)</th>
-                    <th>समाप्ति (Expires)</th>
-                    <th>स्थिति (Status)</th>
-                    <th>कार्रवाई (Action)</th>
+                    <th>ગ્રાહક (Customer / ग्राहक)</th>
+                    <th>ડેમો ચાવી (Key Code / चाबी)</th>
+                    <th>સમાપ્તિ (Expires / समाप्ति)</th>
+                    <th>સ્થિતિ (Status / स्थिति)</th>
+                    <th>ક્રિયા (Action / कार्रवाई)</th>
                   </tr>
                 </thead>
                 <tbody id="demoKeysTableBody">
@@ -3081,7 +3081,7 @@ def index_ui():
 
           <div class="glass-card" style="max-width:760px; margin: 0 auto;">
             <div class="card-header">
-              <span>⚙️ Astrologer White-Label Branding Settings (ब्रांडिंग सेटिंग्स)</span>
+              <span>⚙️ જ્યોતિષ કેન્દ્ર બ્રાન્ડિંગ સેટિંગ્સ (ब्रांडिंग सेटिंग्स)</span>
             </div>
             <p style="font-size:12px; color:#574032; margin-bottom:16px;">
               These credentials are saved to your offline SQLite database and automatically printed on the Cover Page, Headers, and Footers of all generated client reports.
@@ -3100,11 +3100,11 @@ def index_ui():
 
             <div class="form-grid">
               <div class="form-group">
-                <label>Phone / WhatsApp</label>
+                <label>ફોન / વ્હોટ્સએપ (Phone / WhatsApp)</label>
                 <input type="text" id="brand_phone" placeholder="e.g. +91 98765 43210"/>
               </div>
               <div class="form-group">
-                <label>Email Address</label>
+                <label>ઇમેઇલ સરનામું (Email Address)</label>
                 <input type="email" id="brand_email" placeholder="e.g. consult@vedasjyotish.com"/>
               </div>
             </div>
@@ -3121,7 +3121,7 @@ def index_ui():
 
             <div style="display:flex; justify-content:space-between; align-items:center;">
               <button class="btn-primary-gradient" onclick="saveBrandingSettings()">
-                💾 Save Branding Settings
+                💾 બ્રાન્ડિંગ અને સેટિંગ્સ સેવ કરો (सेव करें)
               </button>
               <span id="brandSaveStatus" style="font-size:12px; font-weight:700; color:#166534; display:none;">
                 ✓ Saved to SQLite Database!
@@ -3138,23 +3138,23 @@ def index_ui():
   <nav class="mobile-bottom-bar" id="mobileBottomBar">
     <button class="mob-tab-btn active" id="mobtab_dashboard" onclick="switchNav('dashboard')" aria-label="Dashboard">
       <span class="mob-icon">📊</span>
-      <span class="mob-label">Dashboard</span>
+      <span class="mob-label">ડેશબોર્ડ</span>
     </button>
     <button class="mob-tab-btn" id="mobtab_new_kundli" onclick="switchNav('new_kundli')" aria-label="New Kundli">
       <span class="mob-icon">➕</span>
-      <span class="mob-label">New Kundli</span>
+      <span class="mob-label">નવી કુંડળી</span>
     </button>
     <button class="mob-tab-btn" id="mobtab_workspace" onclick="switchNav('workspace')" aria-label="Charts Workspace">
       <span class="mob-icon">🪐</span>
-      <span class="mob-label">Charts</span>
+      <span class="mob-label">વર્કસ્પેસ</span>
     </button>
     <button class="mob-tab-btn" id="mobtab_milan" onclick="switchNav('milan')" aria-label="Kundli Milan">
       <span class="mob-icon">💍</span>
-      <span class="mob-label">Milan</span>
+      <span class="mob-label">મિલન</span>
     </button>
     <button class="mob-tab-btn" id="mobtab_settings" onclick="switchNav('settings')" aria-label="Settings">
       <span class="mob-icon">⚙️</span>
-      <span class="mob-label">Settings</span>
+      <span class="mob-label">સેટિંગ્સ</span>
     </button>
   </nav>
 
@@ -3178,6 +3178,77 @@ def index_ui():
 
   <!-- Javascript Logic -->
   <script>
+    
+    // 🌟 GUJARATI LOCALIZATION HELPERS (Devanagari & English to Authentic Gujarati + Hindi)
+    const GU_CHAR_OFFSET = 0x0080;
+    const GU_TERM_MAP = {
+      // Planets
+      'Sun': 'સૂર્ય (सूर्य)', 'Moon': 'ચંદ્ર (चंद्र)', 'Mars': 'મંગળ (मंगल)',
+      'Mercury': 'બુધ (बुध)', 'Jupiter': 'ગુરુ (गुरु)', 'Venus': 'શુક્ર (शुक्र)',
+      'Saturn': 'શનિ (शनि)', 'Rahu': 'રાહુ (राहु)', 'Ketu': 'કેતુ (केतु)',
+      'Uranus': 'હર્ષલ (हर्षल)', 'Neptune': 'નેપ્ચ્યુન (नेपच्यून)', 'Pluto': 'પ્લુટો (प्लूटो)',
+      'Ascendant': 'લગ્ન (लग्न)', 'ASC': 'લગ્ન (लग्न)', 'Lagna': 'લગ્ન (लग्न)',
+      // Rashis
+      'Aries': 'મેષ (मेष)', 'Taurus': 'વૃષભ (वृषभ)', 'Gemini': 'મિથુન (मिथुन)',
+      'Cancer': 'કર્ક (कर्क)', 'Leo': 'સિંહ (सिंह)', 'Virgo': 'કન્યા (कन्या)',
+      'Libra': 'તુલા (तुला)', 'Scorpio': 'વૃશ્ચિક (वृश्चिक)', 'Sagittarius': 'ધન (धनु)',
+      'Capricorn': 'મકર (मकर)', 'Aquarius': 'કુંભ (कुंभ)', 'Pisces': 'મીન (मीन)',
+      // Dignities
+      'Exalted': 'ઉચ્ચ (उच्च)', 'Debilitated': 'નીચ (नीच)', 'Own Sign': 'સ્વરાશિ (स्वराशि)',
+      'Moolatrikona': 'મૂળત્રિકોણ (मूलत्रिकोण)', 'Great Friend': 'અધિમિત્ર (अधिमित्र)',
+      'Friend': 'મિત્ર (मित्र)', 'Neutral': 'સમ (सम)', 'Enemy': 'શત્રુ (शत्रु)',
+      'Great Enemy': 'અધિશત્રુ (अधिशत्रु)', 'Combust': 'અસ્ત (अस्त)', 'Normal': 'સામાન્ય (सामान्य)',
+      // Gunas & Avakahada
+      'Brahmin': 'બ્રાહ્મણ (ब्राह्मण)', 'Kshatriya': 'ક્ષત્રિય (क्षत्रिय)', 'Vaishya': 'વૈશ્ય (वैश्य)', 'Shudra': 'શૂદ્ર (शूद्र)',
+      'Deva': 'દેવ (देव)', 'Manushya': 'મનુષ્ય (मनुष्य)', 'Rakshasa': 'રાક્ષસ (राक्षस)',
+      'Chatushpada': 'ચતુષ્પદ (चतुष्पद)', 'Jalchar': 'જળચર (जलचर)', 'Vanachara': 'વનચર (वनचर)', 'Keeta': 'કીટ (कीट)',
+      'Ashwa': 'અશ્વ (अश्व)', 'Gaja': 'ગજ (गज)', 'Mesha': 'મેષ (मेष)', 'Sarpa': 'સર્પ (सर्प)', 'Shwan': 'શ્વાન (श्वान)',
+      'Marjara': 'માર્જાર (मार्जार)', 'Mushaka': 'મૂષક (मूषक)', 'Gau': 'ગૌ (गौ)', 'Mahisha': 'મહિષ (महिष)',
+      'Vyaghra': 'વ્યાઘ્ર (व्याघ्र)', 'Mriga': 'મૃગ (मृग)', 'Vanara': 'વાનર (वानर)', 'Nakula': 'નકુલ (नकुल)', 'Simha': 'સિંહ (सिंह)',
+      'Adi': 'આદિ (आदि)', 'Madhya': 'મધ્ય (मध्य)', 'Antya': 'અંત્ય (अंत्य)',
+      'Iron': 'લોખંડ / લોહ (लोहा)', 'Copper': 'તાંબુ / તામ્ર (तांबा)', 'Silver': 'ચાંદી / રજત (चांदी)', 'Gold': 'સોનું / સુવર્ણ (स्वर्ण)',
+      // Status
+      'Retrograde': 'વક્રી (वक्र)', 'Direct': 'માર્ગી (मार्गी)'
+    };
+
+    function devToGu(str) {
+      if (!str || typeof str !== 'string') return '';
+      let res = '';
+      for (let i = 0; i < str.length; i++) {
+        const code = str.charCodeAt(i);
+        if (code >= 0x0900 && code <= 0x097F) {
+          // Handle Devanagari nukta & special cases
+          res += String.fromCharCode(code + GU_CHAR_OFFSET);
+        } else {
+          res += str[i];
+        }
+      }
+      return res;
+    }
+
+    function toGu(text) {
+      if (!text) return '';
+      const s = String(text).trim();
+      if (GU_TERM_MAP[s]) return GU_TERM_MAP[s].split(' ')[0];
+      return devToGu(s);
+    }
+
+    function toGuWithHi(text) {
+      if (!text) return '';
+      const s = String(text).trim();
+      if (GU_TERM_MAP[s]) {
+        return (currentLang === 'gu') ? GU_TERM_MAP[s] : (currentLang === 'hi' ? s : s);
+      }
+      if (currentLang === 'gu') {
+        const gu = devToGu(s);
+        if (gu !== s && !s.includes('(')) {
+          return `${gu} (${s})`;
+        }
+        return gu;
+      }
+      return s;
+    }
+
     let currentKundliData = null;
     let currentLang = 'gu';
     let currentActiveNav = 'new_kundli';
@@ -3289,8 +3360,8 @@ def index_ui():
                   <td>${c.place}</td>
                   <td><span class="badge">${c.category || 'General'}</span></td>
                   <td>
-                    <button class="btn-table-action" onclick="loadClientIntoKundli(${c.id})">🔮 Open Kundli</button>
-                    <button class="btn-table-action" style="color:#DC2626; border-color:#FCA5A5;" onclick="deleteClientRecord(${c.id})">🗑️ Delete</button>
+                    <button class="btn-table-action" onclick="loadClientIntoKundli(${c.id})">🔮 કુંડળી જુઓ (Open)</button>
+                    <button class="btn-table-action" style="color:#DC2626; border-color:#FCA5A5;" onclick="deleteClientRecord(${c.id})">🗑️ કાઢી નાખો (Delete)</button>
                   </td>
                 </tr>
               `).join('');
@@ -3324,7 +3395,7 @@ def index_ui():
                   <td>${r.size_mb} MB</td>
                   <td style="font-size:11.5px; color:#6B7280;">${r.modified}</td>
                   <td>
-                    <a href="${r.download_url}" target="_blank" class="btn-table-action" style="text-decoration:none; display:inline-block;">📥 Download PDF</a>
+                    <a href="${r.download_url}" target="_blank" class="btn-table-action" style="text-decoration:none; display:inline-block;">📥 PDF ડાઉનલોડ</a>
                   </td>
                 </tr>
               `).join('');
@@ -3361,9 +3432,9 @@ def index_ui():
             <td><span class="badge">${c.category || 'General'}</span></td>
             <td style="font-size:11px; color:#78716C;">${c.created_at ? c.created_at.split(' ')[0] : '-'}</td>
             <td>
-              <button class="btn-table-action" onclick="openClientInWorkspace(${c.id})">🪐 Open</button>
-              <button class="btn-table-action" onclick="openClientInReports(${c.id})">📄 PDF</button>
-              <button class="btn-table-action" onclick="editClientInForm(${c.id})">✏️ Edit</button>
+              <button class="btn-table-action" onclick="openClientInWorkspace(${c.id})">🪐 કુંડળી (Open)</button>
+              <button class="btn-table-action" onclick="openClientInReports(${c.id})">📄 PDF રિપોર્ટ</button>
+              <button class="btn-table-action" onclick="editClientInForm(${c.id})">✏️ સંપાદિત (Edit)</button>
               <button class="btn-table-del" onclick="deleteClientRecord(${c.id})">🗑️</button>
             </td>
           </tr>
