@@ -249,7 +249,10 @@ def build_full_56_page_html(data: dict, lang: str = "gu", package: str = "maha")
 
     def P(en_txt: str, hi_txt: str) -> str:
         if is_gu:
-            return to_gujarati(hi_txt)
+            gu_p = to_gujarati(hi_txt)
+            if hi_txt and gu_p != hi_txt:
+                return f"""<div class='para-gu' style="font-family:'Noto Sans Gujarati','Rasa',sans-serif; color:#2E1C10; margin-bottom:4px; line-height:1.65; font-size:12px; font-weight:600;">{gu_p}</div><div class='para-hi-sub' style="font-size:10.5px; color:#574032; font-style:italic; line-height:1.45; border-left:3px solid #D4AF37; padding-left:8px; margin-bottom:10px; background:rgba(254,243,199,0.35); border-radius:0 6px 6px 0; padding-top:3px; padding-bottom:3px;">({hi_txt})</div>"""
+            return f"""<div class='para-gu' style="font-family:'Noto Sans Gujarati','Rasa',sans-serif; color:#2E1C10; margin-bottom:6px; line-height:1.65;">{gu_p}</div>"""
         elif is_hi:
             return hi_txt
         elif is_both:

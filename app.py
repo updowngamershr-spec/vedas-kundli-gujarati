@@ -26,6 +26,7 @@ import uvicorn
 
 from engine.cities import OFFLINE_CITIES, search_cities, find_city
 from engine.ephemeris import compute_core_ephemeris, RASHI_NAMES_EN, RASHI_NAMES_HI
+from engine.gujarati_engine import to_gujarati, RASHI_NAMES_GU, GRAHA_SHORT_GU, GRAHA_NAMES_GU
 from engine.master_kundli import generate_complete_kundli
 from engine.report_html_pdf import build_full_56_page_html, export_html_to_pdf
 from engine.svg_charts import render_north_indian_svg, render_south_indian_svg, render_east_indian_svg
@@ -333,21 +334,31 @@ def api_kundli_details(req: KundliRequest):
         sign_num = ((d1["lagna_sign"] - 1 + (h - 1)) % 12) + 1
         s_en = RASHI_NAMES_EN[sign_num - 1]
         s_hi = RASHI_NAMES_HI[sign_num - 1]
+        s_gu = RASHI_NAMES_GU[sign_num - 1]
         p_names = []
         for p in h_planets:
             if isinstance(p, dict):
-                p_names.append(p.get("short_hi" if req.lang == "hi" else "short_en") or p.get("id", ""))
+                p_id = p.get("id", "")
+                p_short_gu = GRAHA_SHORT_GU.get(p_id, to_gujarati(p.get("short_hi", "")))
+                p_short_hi = p.get("short_hi", "")
+                p_names.append(f"{p_short_gu} ({p_short_hi})" if p_short_hi else p_short_gu)
             else:
-                p_names.append(str(p))
-        p_str = ", ".join(p_names) if p_names else ("रिक्त (शुभ प्रभाव)" if req.lang == "hi" else "Vacant (Auspicious)")
+                p_names.append(to_gujarati(str(p)))
+        p_str = ", ".join(p_names) if p_names else "ખાલી - શુભ પ્રભાવ (रिक्त - शुभ)"
+        title_gu = to_gujarati(bhava_titles_hi[h-1])
+        title_hi = bhava_titles_hi[h-1]
         bhavas_list.append({
             "house": h,
+            "title_gu": title_gu,
+            "title_hi": title_hi,
             "title_en": bhava_titles_en[h-1],
-            "title_hi": bhava_titles_hi[h-1],
-            "sign": f"{s_en} ({s_hi})",
+            "sign": f"{s_gu} ({s_hi})",
+            "sign_gu": s_gu,
+            "sign_hi": s_hi,
             "planets": p_str,
-            "summary_en": f"Governed by {s_en}. Influences native's vitality and domain success.",
-            "summary_hi": f"राशि {s_hi} द्वारा संचालित। यह भाव जीवन में इस क्षेत्र की स्थिरता व सामर्थ्य तय करता है।"
+            "summary_gu": to_gujarati(f"રાશિ {s_hi} દ્વારા સંચાલિત. આ ભાવ જાતકના જીવનમાં વિશેષ તેજ, ઉર્જા અને કાર્યક્ષેત્રમાં ઉત્કૃષ્ટ સફળતા આપે છે."),
+            "summary_hi": f"राशि {s_hi} द्वारा संचालित। यह भाव जातक के जीवन में विशेष स्थिरता, तेज व सफलता प्रदान करता है।",
+            "summary_en": f"Governed by {s_en}. Influences native's vitality and domain success."
         })
 
     # Comprehensive Doshas Analysis
@@ -1825,7 +1836,65 @@ def index_ui():
       }
     }
 
+
+    /* 🌟 COSMIC SACRED LANGUAGE TRANSITION ANIMATION */
+    @keyframes cosmicAuraGlow {
+      0% {
+        opacity: 0.85;
+        transform: scale(0.995);
+        filter: brightness(1.18) drop-shadow(0 0 25px rgba(212,175,55,0.5));
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.002);
+        filter: brightness(1.06) drop-shadow(0 0 12px rgba(194,65,12,0.25));
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1) drop-shadow(0 0 0 rgba(0,0,0,0));
+      }
+    }
+
+    .cosmic-lang-transition {
+      animation: cosmicAuraGlow 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+    }
+
+    /* 🕉️ FLOATING SACRED TOAST */
+    #langSwitchToast {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-30px);
+      z-index: 999999;
+      background: linear-gradient(135deg, #7C2D12 0%, #9A3412 50%, #B45309 100%);
+      color: #FEF3C7;
+      padding: 10px 24px;
+      border-radius: 30px;
+      border: 1.5px solid #FDE68A;
+      box-shadow: 0 10px 35px rgba(124, 45, 18, 0.45), 0 0 20px rgba(253, 224, 71, 0.35);
+      font-weight: 800;
+      font-size: 13.5px;
+      display: none;
+      align-items: center;
+      gap: 12px;
+      pointer-events: none;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      letter-spacing: 0.3px;
+    }
+
+    #langSwitchToast.toast-visible {
+      display: flex !important;
+      transform: translateX(-50%) translateY(0) !important;
+      opacity: 1 !important;
+    }
+
+    @keyframes spinChakra {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
   </style>
+
 </head>
 <body>
   <!-- =============================================================== -->
@@ -2569,7 +2638,12 @@ def index_ui():
               <table class="dash-table">
                 <thead>
                   <tr>
-                    <th>Planet</th><th>Sign (राशि)</th><th>Degree (अंश-कला-विकला)</th><th>Nakshatra &amp; Pada</th><th>Dignity (अवस्था)</th><th>Status</th>
+                    <th>ગ્રહ (Planet / ग्रह)</th>
+                    <th>રાશિ (Sign / राशि)</th>
+                    <th>અંશ-કલા-વિકલા (Degree / अंश)</th>
+                    <th>નક્ષત્ર અને પદ (Nakshatra &amp; Pada / नक्षत्र)</th>
+                    <th>અવસ્થા (Dignity / अवस्था)</th>
+                    <th>સ્થિતિ (Status / गति)</th>
                   </tr>
                 </thead>
                 <tbody id="planetTableBody">
@@ -3694,49 +3768,143 @@ def index_ui():
       if (elGu) elGu.classList.toggle('active', l === 'gu');
       if (elEn) elEn.classList.toggle('active', l === 'en');
       if (elBoth) elBoth.classList.toggle('active', l === 'both');
+
+      // Trigger Cosmic Aura Glow Animation across screen
+      const vp = document.querySelector('.desktop-viewport') || document.body;
+      vp.classList.remove('cosmic-lang-transition');
+      void vp.offsetWidth; // reflow
+      vp.classList.add('cosmic-lang-transition');
+
+      // Show Auspicious Toast
+      const toast = document.getElementById('langSwitchToast');
+      const toastTxt = document.getElementById('langSwitchToastText');
+      if (toast && toastTxt) {
+        if (l === 'gu') {
+          toastTxt.innerHTML = '✨ <b>સંપૂર્ણ ગુજરાતી + હિન્દી આવૃત્તિ સક્રિય</b> (Gujarati &amp; Hindi Active)';
+        } else if (l === 'en') {
+          toastTxt.innerHTML = '✨ <b>English Vedic Edition Active</b>';
+        } else {
+          toastTxt.innerHTML = '✨ <b>દ્વિભાષીય મહા-ડોસિયર સક્રિય</b> (Bilingual Master Edition)';
+        }
+        toast.classList.add('toast-visible');
+        clearTimeout(window._toastTimer);
+        window._toastTimer = setTimeout(() => {
+          toast.classList.remove('toast-visible');
+        }, 2200);
+      }
+
+      // Update UI labels dynamically
+      updateUILanguage(l);
+
       if (currentKundliData) calculateKundli();
+    }
+
+    function updateUILanguage(lang) {
+      const isGu = (lang === 'gu' || lang === 'both');
+      
+      // Update Sidebar Nav Items
+      const navItems = [
+        {id: 'nav_dashboard', gu: '📊 ડેશબોર્ડ (Dashboard)', en: '📊 Dashboard'},
+        {id: 'nav_new_kundli', gu: '➕ નવી કુંડળી (नई कुंडली)', en: '➕ New Kundli'},
+        {id: 'nav_crm', gu: '👥 ગ્રાહક CRM (Clients)', en: '👥 Clients (CRM)'},
+        {id: 'nav_workspace', gu: '🪐 કુંડળી વર્કસ્પેસ (कुंडली)', en: '🪐 Charts & Space'},
+        {id: 'nav_milan', gu: '💍 કુંડળી મિલન (विवाह मिलान)', en: '💍 Kundli Milan'},
+        {id: 'nav_reports', gu: '📄 રિપોર્ટ સ્ટુડિયો (रिपोर्ट)', en: '📄 PDF Report Studio'},
+        {id: 'nav_prashna', gu: '🔮 પ્રશ્ન કુંડળી (प्रश्न कुंडली)', en: '🔮 Prashna Kundli'},
+        {id: 'nav_settings', gu: '⚙️ સેટિંગ્સ (Settings)', en: '⚙️ Settings & Brand'}
+      ];
+      navItems.forEach(item => {
+        const el = document.getElementById(item.id);
+        if (el) el.innerHTML = isGu ? item.gu : item.en;
+      });
+
+      // Update Topbar Title
+      const topTitle = document.getElementById('topNavTitle');
+      if (topTitle) {
+        topTitle.innerHTML = isGu ? 'ઇન્ટરેક્ટિવ કુંડળી વર્કસ્પેસ (कुंडली वर्कस्पेस)' : 'Interactive Kundli Workspace';
+      }
+
+      // Update Form Buttons
+      const btnCalc = document.getElementById('btnCalculateWorkspace');
+      if (btnCalc) {
+        btnCalc.innerHTML = isGu ? '✨ ગણતરી કરો અને કુંડળી જુઓ (कुंडली देखें)' : '✨ Calculate & Open Workspace';
+      }
+      const btnSave = document.getElementById('btnSaveCrm');
+      if (btnSave) {
+        btnSave.innerHTML = isGu ? '💾 CRM માં સેવ કરો (सेव करें)' : '💾 Save to CRM Only';
+      }
+      const btnClear = document.getElementById('btnClearForm');
+      if (btnClear) {
+        btnClear.innerHTML = isGu ? '🔄 ફોર્મ સાફ કરો (साफ करें)' : '🔄 Clear Form';
+      }
     }
 
     // Render Planetary Positions Table
     function renderPlanetsTable(planets) {
       const tbody = document.getElementById('planetTableBody');
+      const pKeysGu = {
+        "Ascendant": "લગ્ન (लग्न)", "ASC": "લગ્ન (लग्न)", "Lagna": "લગ્ન (लग्न)",
+        "Sun": "સૂર્ય (सूर्य)", "Moon": "ચંદ્ર (चंद्र)", "Mars": "મંગળ (मंगल)",
+        "Mercury": "બુધ (बुध)", "Jupiter": "ગુરુ (गुरु)", "Venus": "શુક્ર (शुक्र)",
+        "Saturn": "શનિ (शनि)", "Rahu": "રાહુ (राहु)", "Ketu": "કેતુ (केतु)",
+        "Uranus": "હર્ષલ (हर्षल)", "Neptune": "નેપ્ચ્યુન (नेपच्यून)", "Pluto": "પ્લુટો (प्लूटो)"
+      };
+      const rashiGu = {
+        "Aries": "મેષ (मेष)", "Taurus": "વૃષભ (वृषभ)", "Gemini": "મિથુન (मिथुन)",
+        "Cancer": "કર્ક (कर्क)", "Leo": "સિંહ (सिंह)", "Virgo": "કન્યા (कन्या)",
+        "Libra": "તુલા (तुला)", "Scorpio": "વૃશ્ચિક (वृश्चिक)", "Sagittarius": "ધન (धनु)",
+        "Capricorn": "મકર (मकर)", "Aquarius": "કુંભ (कुंभ)", "Pisces": "મીન (मीन)"
+      };
+      const dignityGu = {
+        "Exalted": "ઉચ્ચ (उच्च)", "Debilitated": "નીચ (नीच)", "Own Sign": "સ્વરાશિ (स्वराशि)",
+        "Moolatrikona": "મૂળત્રિકોણ (मूलत्रिकोण)", "Great Friend": "અધિમિત્ર (अधिमित्र)",
+        "Friend": "મિત્ર (मित्र)", "Neutral": "સમ (सम)", "Enemy": "શત્રુ (शत्रु)",
+        "Great Enemy": "અધિશત્રુ (अधिशत्रु)", "Combust": "અસ્ત (अस्त)", "Normal": "સામાન્ય (सामान्य)"
+      };
+
       tbody.innerHTML = planets.map(p => {
         const retro = p.retrograde || p.is_retro;
-        const isRetro = retro ? 'Retrograde (वक्र)' : 'Direct (मार्गी)';
+        const isRetro = retro ? 'વક્રી (वक्र)' : 'માર્ગી (मार्गी)';
         const retroColor = retro ? '#C2540A' : '#166534';
-        const pName = currentLang === 'hi' ? (p.name_hi || p.name_en) : (p.name_en || p.name_hi);
-        const signName = currentLang === 'hi' ? (p.sign_hi || p.sign_name_hi || p.sign_en) : (p.sign_en || p.sign_name_en || '');
+        
+        let pName = pKeysGu[p.id] || pKeysGu[p.name_en] || toGuWithHi(p.name_hi || p.name_en);
+        if (retro && !pName.includes('[વક્રી]')) pName += ' <span style="color:#C2540A; font-weight:800;">[વક્રી / वक्र]</span>';
+
+        const signName = rashiGu[p.sign_en] || toGuWithHi(p.sign_hi || p.sign_en);
         const deg = p.dms || p.deg_dms || (p.deg_in_sign ? p.deg_in_sign.toFixed(2) + '°' : '');
-        const nak = (currentLang === 'hi' ? (p.nakshatra_hi || p.nakshatra_en) : (p.nakshatra_en || p.nakshatra)) || '';
+        const nakName = toGuWithHi(p.nakshatra_hi || p.nakshatra_en || p.nakshatra || '');
         const pada = p.pada || 1;
-        const dignity = currentLang === 'hi' ? (p.dignity_hi || p.dignity_en || '-') : (p.dignity_en || p.dignity_hi || '-');
+        const nakWithPada = `${nakName} (પદ ${pada} / पद ${pada})`;
+        const dignity = dignityGu[p.dignity_en] || toGuWithHi(p.dignity_hi || p.dignity_en || 'સામાન્ય');
+
         return `
           <tr>
             <td style="font-weight:800; color:#7C2D12; text-align:left; padding-left:14px;">${pName}</td>
             <td style="font-weight:700;">${signName}</td>
             <td style="font-family:monospace; font-weight:700; color:#9A3412;">${deg}</td>
-            <td>${nak} (Pada ${pada})</td>
-            <td style="font-weight:700;">${dignity}</td>
-            <td><span style="font-weight:700; color:${retroColor}; font-size:11px;">${isRetro}</span></td>
+            <td style="font-size:11.8px;">${nakWithPada}</td>
+            <td><span class="badge" style="background:#FEF3C7; color:#92400E; font-weight:700;">${dignity}</span></td>
+            <td><strong style="color:${retroColor};">${isRetro}</strong></td>
           </tr>
         `;
       }).join('');
     }
 
-    // Render 12 Bhavas
     function renderBhavas(bhavas) {
       const container = document.getElementById('bhavasGrid');
       container.innerHTML = bhavas.map(b => {
         const houseNum = b.house || b.num || 1;
-        const title = toGuWithHi(b.title_hi || b.title_en);
-        const sign = toGuWithHi(b.sign || b.sign_name || '');
-        const planets = b.planets || 'Vacant';
-        const summary = toGu(b.summary_hi || b.prediction_hi || b.summary_en || '');
+        const title = b.title_gu && b.title_hi ? `${b.title_gu} (${b.title_hi})` : toGuWithHi(b.title_hi || b.title_en);
+        const sign = b.sign || toGuWithHi(b.sign_hi || '');
+        const planets = b.planets || 'ખાલી (रिक्त)';
+        const guSummary = b.summary_gu || toGu(b.summary_hi || b.prediction_hi || b.summary_en || '');
+        const hiSummary = b.summary_hi || b.prediction_hi || '';
         return `
-        <div style="background:#FFFFFF; border:1.5px solid #EADBC8; border-radius:8px; padding:10px 12px; border-left:4px solid #C2540A;">
-          <div style="font-size:12px; font-weight:800; color:#7C2D12;">${houseNum}. ${title}</div>
-          <div style="font-size:11px; color:#854D0E; font-weight:700; margin:3px 0;">રાશિ (Sign): ${sign} • ગ્રહ (Planets): ${toGu(planets)}</div>
-          <div style="font-size:11px; color:#2E1C10; line-height:1.45; font-weight:500;">${summary}</div>
+        <div style="background:#FFFFFF; border:1.5px solid #EADBC8; border-radius:8px; padding:12px; border-left:4px solid #C2540A; margin-bottom:10px;">
+          <div style="font-size:13px; font-weight:900; color:#7C2D12; margin-bottom:4px;">${houseNum}. ${title}</div>
+          <div style="font-size:11.5px; color:#854D0E; font-weight:700; margin:3px 0;">રાશિ (Sign): ${sign} • ગ્રહ (Planets): ${planets}</div>
+          <div style="font-size:12px; color:#2E1C10; line-height:1.55; font-weight:600; margin-top:6px;">${guSummary}</div>
+          ${hiSummary ? `<div style="font-size:10.5px; color:#6B7280; font-style:italic; line-height:1.45; border-left:2.5px solid #D4AF37; padding-left:8px; margin-top:6px; background:#FEF9EE; border-radius:0 4px 4px 0; padding-top:3px; padding-bottom:3px;">(${hiSummary})</div>` : ''}
         </div>
       `;
       }).join('');
